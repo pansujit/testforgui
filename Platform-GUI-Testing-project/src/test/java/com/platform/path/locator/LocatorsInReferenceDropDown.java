@@ -1,6 +1,7 @@
 package com.platform.path.locator;
 
 import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -19,12 +20,13 @@ public class LocatorsInReferenceDropDown  {
 	
 	@FindBy(how=How.XPATH, using=".//*[@id='navBar']/ul[1]/li[1]/ul/li[1]/a") public WebElement clicktranslation;
 	@FindBy(how=How.XPATH, using=".//*[@id='navBar']/ul[1]/li[1]/ul/li[2]/a") public WebElement clickNLP;
-		
+	@FindBy(how=How.XPATH, using=".//*[@id='navBar']/ul[1]/li[1]/ul/li[3]/a") public WebElement clickResources;
+
 	public  WebElement referenceDropDownItems(String name) throws InterruptedException {
 		
 		WebElement choiceElement=null;
 		
-		
+		Thread.sleep(5000);
 		 List<WebElement> element = driver.findElements(By.xpath("//*[@id='developer']"));
 		 //System.out.println(element.size());
 		 //System.out.println(element.get(1).getText());
