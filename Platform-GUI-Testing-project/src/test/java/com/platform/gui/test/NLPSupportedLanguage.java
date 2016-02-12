@@ -34,10 +34,5 @@ public class NLPSupportedLanguage extends BaseTestClassExtended {
 	}
 	
 	
-	@Test
-	public void test(){
-		
-		System.out.println("hello");
-	}
-
+	
 }
