@@ -39,4 +39,11 @@
 		
 	</test>
 	
+	 <test name="testme5">
+		<classes>
+ 			
+ 			<class name="com.platform.gui.test.FileTranslationTextENtoFRAsync"></class>
+		</classes>
+		
+	</test>
 </suite> <!-- Suite -->

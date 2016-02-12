@@ -63,6 +63,15 @@ public class LocatorsInTranslateRestAPI {
  	public WebElement fileTargetText;
 	
 	
+	// This  will give the request id for the asynchronous file transfer
+	@FindBy(how=How.CSS, using="#Translation_post_translation_file_translate > div > div.response > div.block.response_body > pre > code")
+ 	public WebElement fileTranslationAsyncRequestId;
+	
+	// This will give the response code for the the test e.g. 200 ok and 400 nok etc.
+	@FindBy(how=How.CSS, using="#Translation_post_translation_file_translate > div > div.response > div.block.response_code > pre")
+ 	public WebElement fileTranslationAsyncResposeCode;
+	
+	
 	@FindBy(how=How.XPATH, using=".//*[@id='Translation_post_translation_file_translate']/div/form/div[6]/input")
  	public WebElement fileTryButton;
 	

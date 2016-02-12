@@ -61,5 +61,46 @@ public class RESTAPIFileTranslation   {
 		
 		
 	}
+	
+	
+	public String[] fileTranslationfromENtoFRAsync() throws InterruptedException{
+		
+		//getting front page sign in web element from locator front page
+		//LocatorsInFrontPage.signIn.click();
+		
+		
+		LocatorsInReferenceDropDown locatorreferencedropdown=PageFactory.initElements(driver, LocatorsInReferenceDropDown.class);
+		locatorreferencedropdown.referenceDropDownItems("reference").click();
+		locatorreferencedropdown.clicktranslation.click();
+		
+		Thread.sleep(2000);
+		
+		CommonLocators commonlocator=PageFactory.initElements(driver, CommonLocators.class);
+		driver.switchTo().frame(driver.findElement(By.id("documentationContent")));
+		commonlocator.apiKey.sendKeys("2965f61d-a0cb-46b9-9667-21ee1d284b24");
+		
+		
+		LocatorsInTranslateRestAPI locatorsintranslateapi=PageFactory.initElements(driver, LocatorsInTranslateRestAPI.class);
+		locatorsintranslateapi.translation.click();
+		locatorsintranslateapi.fileTranslation.click();
+		
+		
+		LocatorsInTranslateRestAPI locatorsintranslationAPI=PageFactory.initElements(driver, LocatorsInTranslateRestAPI.class);
+		locatorsintranslationAPI.fileInput.sendKeys(locatorsintranslationAPI.fileCheck());
+		locatorsintranslationAPI.fileSource.clear();
+		locatorsintranslationAPI.fileSource.sendKeys("en");
+		locatorsintranslationAPI.fileTargetText.sendKeys("fr");
+		locatorsintranslationAPI.fileSelectAsyncTrue.click();
+		locatorsintranslationAPI.fileTryButton.click();
+		
+		Thread.sleep(2000);
+		String [] myArray= new String[2];
+		myArray[0]=locatorsintranslationAPI.fileTranslationAsyncRequestId.getText();
+		myArray[1]=locatorsintranslationAPI.fileTranslationAsyncResposeCode.getText();
+		return myArray;
+		
+		
+		
+	}
 
 }
