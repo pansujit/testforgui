@@ -21,6 +21,7 @@ public class LocatorsInReferenceDropDown  {
 	@FindBy(how=How.XPATH, using=".//*[@id='navBar']/ul[1]/li[1]/ul/li[1]/a") public WebElement clicktranslation;
 	@FindBy(how=How.XPATH, using=".//*[@id='navBar']/ul[1]/li[1]/ul/li[2]/a") public WebElement clickNLP;
 	@FindBy(how=How.XPATH, using=".//*[@id='navBar']/ul[1]/li[1]/ul/li[3]/a") public WebElement clickResources;
+	@FindBy(how=How.XPATH, using=".//*[@id='navBar']/ul[1]/li[1]/ul/li[4]/a") public WebElement clickMultimodal;
 
 	public  WebElement referenceDropDownItems(String name) throws InterruptedException {
 		

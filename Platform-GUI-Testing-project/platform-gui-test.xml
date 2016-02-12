@@ -4,12 +4,14 @@
   <test name="testme">
 		<classes>
  			<class name="com.platform.gui.test.TranslationTextENtoFR"></class>
+ 			<class name="com.platform.gui.test.FileTranslationTextENtoFR"></class>
+ 			<class name="com.platform.gui.test.NLPSupportedLanguage"></class>
+ 			<class name="com.platform.gui.test.ResourcesDictionarySupportedLanguage"></class>
+ 			<class name="com.platform.gui.test.MultimodalSpeechSupportedLanguage"></class>
 		</classes>
+		
 	</test>
 	
-	<test name="testme1">
-		<classes>
- 			<class name="com.platform.gui.test.NLPSupportedLanguage"></class>
-		</classes>
-	</test>
+	
+	
 </suite> <!-- Suite -->

@@ -3,10 +3,11 @@
  */
 package com.platform.gui.test;
 
-import org.openqa.selenium.By;
+
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+
 import com.platform.method.RESTNLPNerTranslation;
 
 
@@ -29,9 +30,14 @@ public class NLPSupportedLanguage extends BaseTestClassExtended {
 		
 		Assert.assertEquals(NLPSupportedLanguage.nerSupportedLanguage(),"200");
 		
+			
+	}
+	
+	
+	@Test
+	public void test(){
 		
-		
-		
+		System.out.println("hello");
 	}
 
 }

@@ -26,6 +26,14 @@ public class LocatorsInRESTTranslationHomeAPI {
 	@FindBy(how=How.XPATH, using=".//*[@id='swagger_sidebar']/div/div/div[2]/div[2]/div[2]/div/div[2]")
 	public WebElement translation;
 	
+	@FindBy(how=How.XPATH, using=".//*[@id='swagger_sidebar']/div/div/div[2]/div[2]/div[2]/div/div[2]/div[2]")
+	public WebElement fileTranslation;
+	
+	
+	
+	
+	
+	
 	
 
 	

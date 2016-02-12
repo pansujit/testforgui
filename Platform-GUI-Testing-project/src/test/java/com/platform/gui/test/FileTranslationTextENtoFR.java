@@ -1,0 +1,31 @@
+package com.platform.gui.test;
+
+import static org.testng.Assert.assertEquals;
+
+import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+import com.platform.method.RESTAPIFileTranslation;
+
+
+// this will test en to fr text translation
+
+public class FileTranslationTextENtoFR extends BaseTestClassExtended {
+	
+
+	
+	@Test
+	public void fileTestENtoFR() throws InterruptedException{
+		
+		RESTAPIFileTranslation filetranslation=PageFactory.initElements(driver, RESTAPIFileTranslation.class);
+		Assert.assertEquals(filetranslation.fileTranslationfromENtoFR(), "bonjour salut comment allez vous");
+		
+		
+		
+		
+		
+		
+		
+	}
+
+}
