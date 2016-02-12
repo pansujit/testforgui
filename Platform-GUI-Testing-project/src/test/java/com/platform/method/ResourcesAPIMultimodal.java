@@ -7,6 +7,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
+import com.platform.path.locator.CommonLocators;
 import com.platform.path.locator.LocatorsInMultimodalAPI;
 import com.platform.path.locator.LocatorsInRESTNLPApi;
 import com.platform.path.locator.LocatorsInReferenceDropDown;
@@ -35,8 +36,10 @@ public class ResourcesAPIMultimodal {
 	Thread.sleep(2000);
 	driver.switchTo().frame(driver.findElement(By.id("documentationContent")));
 	
-	LocatorsInRESTNLPApi locatorinrestnlpapi=PageFactory.initElements(driver, LocatorsInRESTNLPApi.class);
-	locatorinrestnlpapi.apiKey.sendKeys("2965f61d-a0cb-46b9-9667-21ee1d284b24");
+	
+	CommonLocators commonlocator=PageFactory.initElements(driver, CommonLocators.class);
+	commonlocator.apiKey.sendKeys("2965f61d-a0cb-46b9-9667-21ee1d284b24");
+	
 	
 	LocatorsInMultimodalAPI locatorsinmultimodalsapi=PageFactory.initElements(driver, LocatorsInMultimodalAPI.class);
 	locatorsinmultimodalsapi.clickspeech.click();

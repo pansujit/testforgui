@@ -6,12 +6,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
-public class LocatorsInRESTTranslationHomeAPI {
+public class CommonLocators {
 	
 	
 	public  WebDriver driver;
 
-	public LocatorsInRESTTranslationHomeAPI(WebDriver ldriver){
+	public CommonLocators(WebDriver ldriver){
 		this.driver=ldriver;
 	
 	}
@@ -23,11 +23,7 @@ public class LocatorsInRESTTranslationHomeAPI {
 	@FindBy(how=How.XPATH, using="//div[@class='panel-body']//div[@class='area controls']//input[@id='input_apiKey']")
 	public WebElement apiKey;
 	
-	@FindBy(how=How.XPATH, using=".//*[@id='swagger_sidebar']/div/div/div[2]/div[2]/div[2]/div/div[2]")
-	public WebElement translation;
 	
-	@FindBy(how=How.XPATH, using=".//*[@id='swagger_sidebar']/div/div/div[2]/div[2]/div[2]/div/div[2]/div[2]")
-	public WebElement fileTranslation;
 	
 	
 	

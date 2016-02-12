@@ -6,7 +6,7 @@ package com.platform.method;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
-import com.platform.path.locator.LocatorsInRESTTranslationHomeAPI;
+import com.platform.path.locator.CommonLocators;
 import com.platform.path.locator.LocatorsInReferenceDropDown;
 import com.platform.path.locator.LocatorsInTranslateRestAPI;
 
@@ -38,11 +38,15 @@ public class RESTAPIFileTranslation   {
 		
 		Thread.sleep(2000);
 		
-		LocatorsInRESTTranslationHomeAPI locatorsinRESTAPI=PageFactory.initElements(driver, LocatorsInRESTTranslationHomeAPI.class);
+		CommonLocators commonlocator=PageFactory.initElements(driver, CommonLocators.class);
 		driver.switchTo().frame(driver.findElement(By.id("documentationContent")));
-		locatorsinRESTAPI.apiKey.sendKeys("2965f61d-a0cb-46b9-9667-21ee1d284b24");
-		locatorsinRESTAPI.translation.click();
-		locatorsinRESTAPI.fileTranslation.click();
+		commonlocator.apiKey.sendKeys("2965f61d-a0cb-46b9-9667-21ee1d284b24");
+		
+		
+		LocatorsInTranslateRestAPI locatorsintranslateapi=PageFactory.initElements(driver, LocatorsInTranslateRestAPI.class);
+		locatorsintranslateapi.translation.click();
+		locatorsintranslateapi.fileTranslation.click();
+		
 		
 		LocatorsInTranslateRestAPI locatorsintranslationAPI=PageFactory.initElements(driver, LocatorsInTranslateRestAPI.class);
 		locatorsintranslationAPI.fileInput.sendKeys(locatorsintranslationAPI.fileCheck());
