@@ -5,6 +5,8 @@ import static org.testng.Assert.assertEquals;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+
+import com.platform.asserting.attribute.TranslationPageAsserts;
 import com.platform.method.RESTAPIFileTranslation;
 
 
@@ -18,13 +20,8 @@ public class FileTranslationTextENtoFR extends BaseTestClassExtended {
 	public void fileTestENtoFR() throws InterruptedException{
 		
 		RESTAPIFileTranslation filetranslation=PageFactory.initElements(driver, RESTAPIFileTranslation.class);
-		Assert.assertEquals(filetranslation.fileTranslationfromENtoFR(), "bonjour salut comment allez vous");
 		
-		
-		
-		
-		
-		
+		Assert.assertEquals(filetranslation.fileTranslationfromENtoFR(), TranslationPageAsserts.fileEntoFrTranslation);
 		
 	}
 
