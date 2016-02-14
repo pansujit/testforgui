@@ -34,8 +34,7 @@ public class LocatorsInTranslateRestAPI {
 	@FindBy(how=How.XPATH, using=".//*[@id='swagger_sidebar']/div/div/div[2]/div[2]/div[2]/div/div[2]")
 	public WebElement translation;
 	
-	
-	
+		
 	@FindBy(how=How.XPATH, using=".//*[@id='parm-Translation_post_translation_text_translate']/div[2]/div[2]/input")
  	public WebElement sourceText;
 	
@@ -48,8 +47,17 @@ public class LocatorsInTranslateRestAPI {
 	@FindBy(how=How.XPATH, using="//div[@id='parm-Translation_post_translation_file_translate']//div[@class='parameter-item']//div[@class='param-property']//input[@name='input']")
  	public WebElement fileInput;
 	
+	// if it is selected then source will join with the output text
+	@FindBy(how=How.XPATH, using=".//*[@id='parm-Translation_post_translation_text_translate']/div[6]/div[2]/div[2]/select/option[2]")
+ 	public WebElement textWithSourceeTrue;
 	
-	//file translate
+	
+	// if it is selected then the translated text will retranslated to original 
+	@FindBy(how=How.XPATH, using=".//*[@id='parm-Translation_post_translation_text_translate']/div[10]/div[2]/div[2]/select/option[2]")
+	public WebElement textWithBackTranslationTrue;
+	
+	
+	//File Translate
 	
 	
 	//The left side panel attribute to jump in that location without scrolling down
@@ -153,8 +161,8 @@ public class LocatorsInTranslateRestAPI {
 	// this will give the result of async file translation and request ID is required
 	
 	// This is the form that is used for the requested Id generated when file async mode is selected for result  
-	@FindBy(how=How.XPATH, using=".//*[@id='parm-Translation_post_translation_file_cancel']/div[1]/div[2]/input")
-	public WebElement fileTranslateResultTequestId;
+	@FindBy(how=How.XPATH, using=".//*[@id='parm-Translation_get_translation_file_result']/div[1]/div[2]/input")
+	public WebElement fileTranslateResultRequestId;
 	
 	
 	// This is click button for try whether it succeed to cancel or not

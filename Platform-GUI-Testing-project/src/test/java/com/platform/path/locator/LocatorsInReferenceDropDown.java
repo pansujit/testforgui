@@ -29,6 +29,7 @@ public class LocatorsInReferenceDropDown  {
 		
 		Thread.sleep(5000);
 		 List<WebElement> element = driver.findElements(By.xpath("//*[@id='developer']"));
+		 
 		 //System.out.println(element.size());
 		 //System.out.println(element.get(1).getText());
 		// JavascriptExecutor executor = (JavascriptExecutor)driver;

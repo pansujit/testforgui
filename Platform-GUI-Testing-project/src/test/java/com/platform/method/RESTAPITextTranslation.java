@@ -53,5 +53,60 @@ public class RESTAPITextTranslation   {
 		
 		
 	}
+	
+public void textTranslationfromENtoFRWithSourceTrue() throws InterruptedException{
+		
+		LocatorsInReferenceDropDown locatorreferencedropdown=PageFactory.initElements(driver, LocatorsInReferenceDropDown.class);
+		locatorreferencedropdown.referenceDropDownItems("reference").click();
+		locatorreferencedropdown.clicktranslation.click();
+		Thread.sleep(2000);
+		
+		CommonLocators commonlocator=PageFactory.initElements(driver, CommonLocators.class);
+		driver.switchTo().frame(driver.findElement(By.id("documentationContent")));
+		commonlocator.apiKey.sendKeys("d21b9e79-b616-438a-8c88-dbe756b2ed5c");
+		
+		LocatorsInTranslateRestAPI locatorsintranslateapi=PageFactory.initElements(driver, LocatorsInTranslateRestAPI.class);
+		locatorsintranslateapi.translation.click();
+		LocatorsInTranslateRestAPI locatorsintranslationAPI=PageFactory.initElements(driver, LocatorsInTranslateRestAPI.class);
+		locatorsintranslationAPI.inputText.sendKeys("hello");
+		locatorsintranslationAPI.sourceText.clear();
+		locatorsintranslationAPI.sourceText.sendKeys("en");
+		locatorsintranslationAPI.targetText.sendKeys("fr");
+		locatorsintranslationAPI.textWithSourceeTrue.click();
+		locatorsintranslationAPI.tryButton.click();
+		System.out.println(driver.findElement(By.xpath(".//*[@id='Translation_post_translation_text_translate']/div/div[3]/div[3]/pre/code/span[2]/span[2]/span")).getText());
+		System.out.println(driver.findElement(By.xpath(".//*[@id='Translation_post_translation_text_translate']/div/div[3]/div[3]/pre/code/span[2]/span[4]/span")).getText());
+
+			
+	}
+
+
+public void textTranslationfromENtoFRBackTranslation() throws InterruptedException{
+	
+	
+	LocatorsInReferenceDropDown locatorreferencedropdown=PageFactory.initElements(driver, LocatorsInReferenceDropDown.class);
+	locatorreferencedropdown.referenceDropDownItems("reference").click();
+	locatorreferencedropdown.clicktranslation.click();
+	Thread.sleep(2000);
+	
+	CommonLocators commonlocator=PageFactory.initElements(driver, CommonLocators.class);
+	driver.switchTo().frame(driver.findElement(By.id("documentationContent")));
+	commonlocator.apiKey.sendKeys("d21b9e79-b616-438a-8c88-dbe756b2ed5c");
+	
+	LocatorsInTranslateRestAPI locatorsintranslateapi=PageFactory.initElements(driver, LocatorsInTranslateRestAPI.class);
+	locatorsintranslateapi.translation.click();
+	LocatorsInTranslateRestAPI locatorsintranslationAPI=PageFactory.initElements(driver, LocatorsInTranslateRestAPI.class);
+	locatorsintranslationAPI.inputText.sendKeys("hello");
+	locatorsintranslationAPI.sourceText.clear();
+	locatorsintranslationAPI.sourceText.sendKeys("en");
+	locatorsintranslationAPI.targetText.sendKeys("fr");
+	locatorsintranslationAPI.textWithSourceeTrue.click();
+	locatorsintranslationAPI.textWithBackTranslationTrue.click();
+	locatorsintranslationAPI.tryButton.click();
+	System.out.println(driver.findElement(By.xpath(".//*[@id='Translation_post_translation_text_translate']/div/div[3]/div[3]/pre/code/span[2]/span[2]/span")).getText());
+	System.out.println(driver.findElement(By.xpath(".//*[@id='Translation_post_translation_text_translate']/div/div[3]/div[3]/pre/code/span[2]/span[4]/span")).getText());
+	System.out.println(driver.findElement(By.xpath(".//*[@id='Translation_post_translation_text_translate']/div/div[3]/div[3]/pre/code/span[2]/span[6]/span")).getText());
+		
+}
 
 }

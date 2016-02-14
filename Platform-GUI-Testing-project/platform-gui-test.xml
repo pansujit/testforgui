@@ -15,15 +15,40 @@
 		</classes>
 		
 	</test>
-	 <test name="testme2">
+	
+	
+		 <test name="testme2">
 		<classes>
- 		
- 			<class name="com.platform.gui.test.NLPSupportedLanguage"></class>
- 		
+ 			
+ 			<class name="com.platform.gui.test.FileTranslationTextENtoFRAsync"></class>
 		</classes>
 		
 	</test>
-	 <test name="testme3">
+	
+	  <test name="testme3">
+		<classes>
+ 			<class name="com.platform.gui.test.FileTranslationTextENtoFRAsyncResult"></class>
+ 			
+		</classes>
+		
+	</test>
+	  <test name="testme4">
+		<classes>
+ 			<class name="com.platform.gui.test.FileTranslationTextENtoFRAsyncStatus"></class>
+ 			
+		</classes>
+		
+	</test>
+	  <test name="testme5">
+		<classes>
+ 			<class name="com.platform.gui.test.FileTranslationBatchCreate"></class>
+ 			
+		</classes>
+		
+			
+	</test>
+
+	 <test name="testme6">
 		<classes>
  		
  			<class name="com.platform.gui.test.ResourcesDictionarySupportedLanguage"></class>
@@ -31,7 +56,7 @@
 		</classes>
 		
 	</test>
-	 <test name="testme4">
+	 <test name="testme7">
 		<classes>
  			
  			<class name="com.platform.gui.test.MultimodalSpeechSupportedLanguage"></class>
@@ -39,10 +64,37 @@
 		
 	</test>
 	
-	 <test name="testme5">
+
+	
+		 <test name="testme8">
 		<classes>
+ 		
+ 			<class name="com.platform.gui.test.NLPSupportedLanguage"></class>
+ 		
+		</classes>
+		
+	</test>
+	  <test name="testme9">
+		<classes>
+ 			<class name="com.platform.gui.test.FileTranslationTextENtoFRWithSourceTrue"></class>
  			
- 			<class name="com.platform.gui.test.FileTranslationTextENtoFRAsync"></class>
+		</classes>
+		
+	</test>
+	
+		
+	  <test name="testme10">
+		<classes>
+ 			<class name="com.platform.gui.test.TranslationTextENtoFRWithBackTranslationTrue"></class>
+ 			
+		</classes>
+		
+	</test>
+	
+	 <test name="testme11">
+		<classes>
+ 			<class name="com.platform.gui.test.TranslationTextENtoFRWithSourceTrue"></class>
+ 			
 		</classes>
 		
 	</test>

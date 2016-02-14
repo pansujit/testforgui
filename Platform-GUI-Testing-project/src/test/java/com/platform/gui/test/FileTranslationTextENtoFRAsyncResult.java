@@ -1,28 +1,25 @@
 package com.platform.gui.test;
 
 
+import org.json.simple.parser.ParseException;
 import org.openqa.selenium.support.PageFactory;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 import com.platform.method.RESTAPIFileTranslation;
 
 
 // this will test en to fr text translation
 
-public class FileTranslationTextENtoFRAsync extends BaseTestClassExtended {
+public class FileTranslationTextENtoFRAsyncResult extends BaseTestClassExtended {
 	
 
 	
 	@Test
-	public void fileTranslateENtoFRAsync() throws InterruptedException{
-		
+	public void fileTestENtoFR() throws InterruptedException, ParseException{
+				
 		RESTAPIFileTranslation filetranslation=PageFactory.initElements(driver, RESTAPIFileTranslation.class);
 		String[] compareStrings=filetranslation.fileTranslationfromENtoFRAsync();
-		Assert.assertEquals((compareStrings[0]).length()>5, true);
-		Assert.assertEquals(compareStrings[1],"200");
+		System.out.println(filetranslation.fileTranslationfromENtoFRAsyncResult(compareStrings[0]));
 		
-	
-		
-	}
+		}
 
 }
