@@ -18,7 +18,7 @@ public class FileTranslationBatchCreate extends BaseTestClassExtended {
 
 	
 	@Test
-	public void fileTestENtoFR() throws InterruptedException, ParseException{
+	public void fileTranslationBatchCreate() throws InterruptedException, ParseException{
 		
 		RESTAPIFileTranslation filetranslation=PageFactory.initElements(driver, RESTAPIFileTranslation.class);
 		Assert.assertEquals(filetranslation.fileTranslationBatchCreate(),TranslationPageAsserts.getFilebatchcreateid());

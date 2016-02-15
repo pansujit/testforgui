@@ -192,7 +192,7 @@ public String fileTranslationBatchCreate() throws InterruptedException, ParseExc
 	locatorsintranslationAPI.fileTargetText.sendKeys("fr");
 	locatorsintranslationAPI.fileTranslateBatchCreateButton.click();
 	Thread.sleep(2000);
-	return JsonParser.jsontToTextConverter(locatorsintranslationAPI.getTranslateBatchCreateResult.getText());
+	return JsonParser.jsontToTextConverterReturnKey(locatorsintranslationAPI.getTranslateBatchCreateResult.getText());
 		
 }
 

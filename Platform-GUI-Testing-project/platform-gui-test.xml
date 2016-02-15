@@ -124,6 +124,34 @@
  			<class name="com.platform.gui.test.TestNerExtractEntityWithInputFile"></class>
  			
 		</classes>
+		</test>
+		 <test name="testme16">
+		<classes>
+ 			<class name="com.platform.gui.test.TestNLPLidDocWithInput"></class>
+ 			
+		</classes>
+		
+	</test>
+	
+		 <test name="testme17">
+		<classes>
+ 			<class name="com.platform.gui.test.TestNLPLidDocWithInputFile"></class>
+ 			
+		</classes>
+		
+	</test>
+		 <test name="testme18">
+		<classes>
+ 			<class name="com.platform.gui.test.TestNLPLidParaWithInput"></class>
+ 			
+		</classes>
+		
+	</test>
+		 <test name="testme19">
+		<classes>
+ 			<class name="com.platform.gui.test.TestNLPLidParaWithInputFile"></class>
+ 			
+		</classes>
 		
 	</test>
 </suite> <!-- Suite -->

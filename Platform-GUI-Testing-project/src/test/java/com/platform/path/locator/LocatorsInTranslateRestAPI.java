@@ -61,6 +61,14 @@ public class LocatorsInTranslateRestAPI {
 	public WebElement getTextWithSourceTrue;
 	
 	
+	// Result when source and back translation is true in text translation
+	
+	@FindBy(how=How.XPATH, using=".//*[@id='Translation_post_translation_text_translate']/div/div[3]/div[3]/pre/code")
+	public WebElement backTranslationTrue;
+	
+	
+	
+	
 	
 	//File Translate
 	
