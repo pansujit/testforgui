@@ -48,14 +48,6 @@
 			
 	</test>
 
-	 <test name="testme6">
-		<classes>
- 		
- 			<class name="com.platform.gui.test.ResourcesDictionarySupportedLanguage"></class>
- 	
-		</classes>
-		
-	</test>
 	 <test name="testme7">
 		<classes>
  			
@@ -154,4 +146,32 @@
 		</classes>
 		
 	</test>
+	
+	 <test name="testme6">
+		<classes>
+ 			<class name="com.platform.gui.resources.test.TestResourcesDictionarySupportedLanguage"></class>
+ 			
+		</classes>
+		
+	</test>
+	 <test name="testme20">
+		<classes>
+ 			<class name="com.platform.gui.resources.test.TestResourcesDictionaryLookUp"></class>
+ 			
+		</classes>
+		
+	</test>
+	 <test name="testme21">
+		<classes>
+ 			<class name="com.platform.gui.resources.test.TestResourcesDictionaryLookUpSuppLanguage"></class>
+ 			
+		</classes>
+		
+	</test>
+	
+	
+	
+	
+	
+	
 </suite> <!-- Suite -->
