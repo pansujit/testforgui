@@ -19,7 +19,7 @@ public class FileTranslationTextENtoFR extends BaseTestClassExtended {
 		
 		RESTAPIFileTranslation filetranslation=PageFactory.initElements(driver, RESTAPIFileTranslation.class);
 		
-		Assert.assertEquals(filetranslation.fileTranslationfromENtoFR(), TranslationPageAsserts.fileEntoFrTranslation);
+		Assert.assertEquals(filetranslation.fileTranslationfromENtoFR(), TranslationPageAsserts.getFileentofrtranslation());
 		
 	}
 

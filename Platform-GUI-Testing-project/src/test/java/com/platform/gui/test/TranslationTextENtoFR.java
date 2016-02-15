@@ -19,7 +19,7 @@ public class TranslationTextENtoFR extends BaseTestClassExtended {
 		RESTAPITextTranslation testme=PageFactory.initElements(driver,RESTAPITextTranslation.class);
 		testme.textTranslationfromENtoFR();
 		Thread.sleep(3000);
-		assertEquals(driver.findElement(By.xpath(".//*[@id='Translation_post_translation_text_translate']/div/div[3]/div[3]/pre/code/span[2]/span[2]/span")).getText().toString().replace("\"", ""),TranslationPageAsserts.textEntoFRTranslation );
+		assertEquals(driver.findElement(By.xpath(".//*[@id='Translation_post_translation_text_translate']/div/div[3]/div[3]/pre/code/span[2]/span[2]/span")).getText().toString().replace("\"", ""),TranslationPageAsserts.getTextentofrtranslation() );
 	}
 
 }

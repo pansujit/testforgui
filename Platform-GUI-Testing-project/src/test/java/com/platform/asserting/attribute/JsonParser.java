@@ -24,6 +24,7 @@ public class JsonParser {
 	
 	public static String jsontToTextConverter(String jsonFile) throws ParseException{
 		
+		String key="";
 		String value="";
 		JSONParser jsonParser = new JSONParser();
 		JSONObject jsonObject = (JSONObject) jsonParser.parse(jsonFile);
@@ -33,7 +34,7 @@ public class JsonParser {
 		Set<?> keys = jsonObject.keySet();
 		Iterator<?> a = keys.iterator();
 		while(a.hasNext()) {
-		   	String key = (String)a.next();
+		   	 key = (String)a.next();
 		    // loop to get the dynamic key
 		   value = (String)jsonObject.get(key);
 		     
@@ -41,6 +42,30 @@ public class JsonParser {
 		
 		
 		return value;
+	}
+	
+	public static String jsontToTextConverterReturnKey(String jsonFile) throws ParseException{
+		
+		String key="";
+		String value="";
+		JSONParser jsonParser = new JSONParser();
+		JSONObject jsonObject = (JSONObject) jsonParser.parse(jsonFile);
+		// get a String from the JSON object
+		//String resuestidValue = (String) jsonObject.get("requestId");
+		//return resuestidValue;
+		Set<?> keys = jsonObject.keySet();
+		Iterator<?> a = keys.iterator();
+		while(a.hasNext()) {
+		   	 key = (String)a.next();
+		   	 if (key=="status")
+		   			 break;
+		    // loop to get the dynamic key
+		   value = (String)jsonObject.get(key);
+		     
+		    }
+		
+		
+		return key;
 	}
 	
 	public static String[] jsontToTextConverterarray(String jsonFile) throws IOException, ParseException{
@@ -66,7 +91,26 @@ public class JsonParser {
             return typo1;
        
 	}
+	
+public static String jsontToTextConverterSourceArray(String jsonFile) throws IOException, ParseException{
 		
-
+		
+		String typo="";
+		 JSONParser jsonParser = new JSONParser();
+    		JSONObject jsonObject = (JSONObject) jsonParser.parse(jsonFile.toString());
+            JSONArray characters = (JSONArray) jsonObject.get("outputs");
+            Iterator<JSONObject> iterator = characters.iterator();
+             while (iterator.hasNext()) {
+            	JSONObject factObj = (JSONObject) iterator.next();
+            	 //typo= (String []) factObj.get("type");
+            	typo= (String) factObj.get("source");
+            	
+            	 //String value = (String) factObj.get("value");
+            	 
+            }
+       
+            return typo;
+		
+}
 
 }

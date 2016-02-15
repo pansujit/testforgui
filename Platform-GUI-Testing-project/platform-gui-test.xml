@@ -98,4 +98,32 @@
 		</classes>
 		
 	</test>
+	 <test name="testme12">
+		<classes>
+ 			<class name="com.platform.gui.test.TestNerAnnotationWithInput"></class>
+ 			
+		</classes>
+		
+	</test>
+	 <test name="testme13">
+		<classes>
+ 			<class name="com.platform.gui.test.TestNerAnnotationWithInputFile"></class>
+ 			
+		</classes>
+		
+	</test>
+	 <test name="testme14">
+		<classes>
+ 			<class name="com.platform.gui.test.TestNerExtractEntityWithInput"></class>
+ 			
+		</classes>
+		
+	</test>
+	 <test name="testme15">
+		<classes>
+ 			<class name="com.platform.gui.test.TestNerExtractEntityWithInputFile"></class>
+ 			
+		</classes>
+		
+	</test>
 </suite> <!-- Suite -->

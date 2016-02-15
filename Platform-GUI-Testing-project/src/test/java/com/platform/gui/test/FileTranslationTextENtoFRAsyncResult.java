@@ -3,7 +3,10 @@ package com.platform.gui.test;
 
 import org.json.simple.parser.ParseException;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 import org.testng.annotations.Test;
+
+import com.platform.asserting.attribute.TranslationPageAsserts;
 import com.platform.method.RESTAPIFileTranslation;
 
 
@@ -18,7 +21,7 @@ public class FileTranslationTextENtoFRAsyncResult extends BaseTestClassExtended 
 				
 		RESTAPIFileTranslation filetranslation=PageFactory.initElements(driver, RESTAPIFileTranslation.class);
 		String[] compareStrings=filetranslation.fileTranslationfromENtoFRAsync();
-		System.out.println(filetranslation.fileTranslationfromENtoFRAsyncResult(compareStrings[0]));
+		Assert.assertEquals(filetranslation.fileTranslationfromENtoFRAsyncResult(compareStrings[0]),TranslationPageAsserts.getFileentofrtranslation());
 		
 		}
 

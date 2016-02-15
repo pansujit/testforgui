@@ -43,9 +43,13 @@ public class RESTAPIFileTranslation   {
 		
 		
 		
-		//comoninreferece.commonInReferenceMenu();
-		Thread.sleep(1000);
-		
+		/*LocatorsInReferenceDropDown locatorreferencedropdown=PageFactory.initElements(driver, LocatorsInReferenceDropDown.class);
+		locatorreferencedropdown.referenceDropDownItems("reference").click();
+		locatorreferencedropdown.clicktranslation.click();
+		Thread.sleep(2000);*/
+		CommonInReference comoninreferece=PageFactory.initElements(driver, CommonInReference.class);
+		comoninreferece.commonInReferenceMenuFace();
+						
 		LocatorsInTranslateRestAPI locatorsintranslateapi=PageFactory.initElements(driver, LocatorsInTranslateRestAPI.class);
 		locatorsintranslateapi.translation.click();
 		locatorsintranslateapi.fileTranslation.click();
@@ -72,7 +76,7 @@ public class RESTAPIFileTranslation   {
 		//LocatorsInFrontPage.signIn.click();
 		
 		CommonInReference comoninreferece=PageFactory.initElements(driver, CommonInReference.class);	
-		comoninreferece.commonInReferenceMenu();
+		comoninreferece.commonInReferenceMenuFace();
 		Thread.sleep(1000);
 		LocatorsInTranslateRestAPI locatorsintranslateapi=PageFactory.initElements(driver, LocatorsInTranslateRestAPI.class);
 		locatorsintranslateapi.translation.click();
@@ -98,13 +102,16 @@ public class RESTAPIFileTranslation   {
 	}
 	
 	
-public String fileTranslationfromENtoFRWithSourceTrue() throws InterruptedException{
+public Boolean fileTranslationfromENtoFRWithSourceTrue() throws InterruptedException{
 		
 		//getting front page sign in web element from locator front page
 		//LocatorsInFrontPage.signIn.click();
 		
 		
 		//comoninreferece.commonInReferenceMenu();
+	
+		CommonInReference comoninreferece=PageFactory.initElements(driver, CommonInReference.class);
+		comoninreferece.commonInReferenceMenuFace();
 		Thread.sleep(1000);		
 		LocatorsInTranslateRestAPI locatorsintranslateapi=PageFactory.initElements(driver, LocatorsInTranslateRestAPI.class);
 		locatorsintranslateapi.translation.click();
@@ -120,8 +127,10 @@ public String fileTranslationfromENtoFRWithSourceTrue() throws InterruptedExcept
 		locatorsintranslationAPI.fileTryButton.click();
 		
 		Thread.sleep(2000);
-		System.out.println(driver.findElement(By.xpath(".//*[@id='Translation_post_translation_file_translate']/div/div[3]/div[3]/pre/code")).getText());
-		return (locatorsintranslationAPI.fileResult.getText());
+		
+		
+		return (locatorsintranslationAPI.getFileResultSourceTrue.getText().contains("part-name: source"));
+		
 		
 		
 		
@@ -138,7 +147,9 @@ public String fileTranslationfromENtoFRWithSourceTrue() throws InterruptedExcept
 			
 		locatorsintranslateapi.fileTranslateStatusTequestId.sendKeys(JsonParser.jsontToTextConverter(requestId));
 		locatorsintranslateapi.fileTranslateStatusTryButton.click();
-		return (driver.findElement(By.xpath(".//*[@id='Translation_get_translation_file_status']/div/div[3]/div[3]/pre/code/span[7]")).getText());
+		//return (driver.findElement(By.xpath(".//*[@id='Translation_get_translation_file_status']/div/div[3]/div[3]/pre/code/span[7]")).getText());
+		Thread.sleep(2000);
+		return(driver.findElement(By.cssSelector("#Translation_get_translation_file_status > div > div.response > div.block.response_body.json > pre > code > span:nth-child(13)")).getText().toString());
 		
 		
 	
@@ -151,6 +162,7 @@ public String fileTranslationfromENtoFRAsyncResult(String requestId) throws Inte
 		Thread.sleep(3000);
 		locatorsintranslateapi.fileTranslateResultRequestId.sendKeys(JsonParser.jsontToTextConverter(requestId));
 		locatorsintranslateapi.fileTranslateResultTryButton.click();
+		Thread.sleep(2000);
 		return (driver.findElement(By.cssSelector("#Translation_get_translation_file_result > div > div.response > div.block.response_body.undefined > pre > code")).getText());
 		
 		
@@ -164,6 +176,8 @@ public String fileTranslationBatchCreate() throws InterruptedException, ParseExc
 	
 	
 	//comoninreferece.commonInReferenceMenu();
+	CommonInReference comoninreferece=PageFactory.initElements(driver, CommonInReference.class);
+	comoninreferece.commonInReferenceMenuFace();
 	Thread.sleep(1000);	
 	
 	LocatorsInTranslateRestAPI locatorsintranslateapi=PageFactory.initElements(driver, LocatorsInTranslateRestAPI.class);
@@ -178,7 +192,7 @@ public String fileTranslationBatchCreate() throws InterruptedException, ParseExc
 	locatorsintranslationAPI.fileTargetText.sendKeys("fr");
 	locatorsintranslationAPI.fileTranslateBatchCreateButton.click();
 	Thread.sleep(2000);
-	return JsonParser.jsontToTextConverter(driver.findElement(By.xpath(".//*[@id='Translation_post_translation_file_batch_create']/div/div[3]/div[3]/pre/code")).getText());
+	return JsonParser.jsontToTextConverter(locatorsintranslationAPI.getTranslateBatchCreateResult.getText());
 		
 }
 

@@ -56,6 +56,11 @@ public class LocatorsInTranslateRestAPI {
 	@FindBy(how=How.XPATH, using=".//*[@id='parm-Translation_post_translation_text_translate']/div[10]/div[2]/div[2]/select/option[2]")
 	public WebElement textWithBackTranslationTrue;
 	
+	// This will give the result when source is set to true
+	@FindBy(how=How.XPATH, using="//*[@id='Translation_post_translation_text_translate']/div/div[3]/div[3]/pre/code")
+	public WebElement getTextWithSourceTrue;
+	
+	
 	
 	//File Translate
 	
@@ -125,6 +130,10 @@ public class LocatorsInTranslateRestAPI {
 	@FindBy(how=How.XPATH, using=".//*[@id='parm-Translation_post_translation_file_translate']/div[12]/div[2]/div[2]/select/option[2]")
 	public WebElement fileSelectAsyncTrue;	
 	
+	// get the result with source True when translate file asynchronously
+	@FindBy(how=How.XPATH, using=".//*[@id='Translation_post_translation_file_translate']/div/div[3]/div[3]/pre/code")
+	public WebElement getFileResultSourceTrue;
+	
 	
 	// Translate file status
 	
@@ -140,6 +149,13 @@ public class LocatorsInTranslateRestAPI {
 	// This is click button for try whether it succeed to cancel or not
 	@FindBy(how=How.XPATH, using=".//*[@id='Translation_get_translation_file_status']/div/form/div[6]/input")
 	public WebElement fileTranslateStatusTryButton;
+	
+	
+	// This is result which if find the json element status, if it present then the test will passs
+		@FindBy(how=How.CSS, using="#Translation_get_translation_file_status > div > div.response > div.block.response_body.json > pre > code > span:nth-child(13)")
+		public WebElement getFileStatusResult;
+	
+
 	
 	
 	
@@ -199,7 +215,9 @@ public class LocatorsInTranslateRestAPI {
 	@FindBy(how=How.XPATH, using=".//*[@id='Translation_post_translation_file_batch_create']/div/form/div[6]/input")
 	public WebElement fileTranslateBatchCreateButton;
 	
-	
+	//This is the result elements in batch create
+		@FindBy(how=How.XPATH, using=".//*[@id='Translation_post_translation_file_batch_create']/div/div[3]/div[3]/pre/code")
+		public WebElement getTranslateBatchCreateResult;
 	
 	// Batch Status
 	
