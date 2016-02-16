@@ -19,11 +19,11 @@ import org.json.simple.parser.ParseException;
  *
  */
 public class JsonParser {
-	
-	
-	
+
+
+
 	public static String jsontToTextConverter(String jsonFile) throws ParseException{
-		
+
 		String key="";
 		String value="";
 		JSONParser jsonParser = new JSONParser();
@@ -34,18 +34,18 @@ public class JsonParser {
 		Set<?> keys = jsonObject.keySet();
 		Iterator<?> a = keys.iterator();
 		while(a.hasNext()) {
-		   	 key = (String)a.next();
-		    // loop to get the dynamic key
-		   value = (String)jsonObject.get(key);
-		     
-		    }
-		
-		
+			key = (String)a.next();
+			// loop to get the dynamic key
+			value = (String)jsonObject.get(key);
+
+		}
+
+
 		return value;
 	}
-	
+
 	public static String jsontToTextConverterReturnKey(String jsonFile) throws ParseException{
-		
+
 		String key="";
 		String value="";
 		JSONParser jsonParser = new JSONParser();
@@ -56,61 +56,74 @@ public class JsonParser {
 		Set<?> keys = jsonObject.keySet();
 		Iterator<?> a = keys.iterator();
 		while(a.hasNext()) {
-		   	 key = (String)a.next();
-		   	 if (key=="status")
-		   			 break;
-		    // loop to get the dynamic key
-		   value = (String)jsonObject.get(key);
-		     
-		    }
-		
-		
+			key = (String)a.next();
+			if (key=="status")
+				break;
+			// loop to get the dynamic key
+			value = (String)jsonObject.get(key);
+
+		}
+
+
 		return key;
 	}
-	
+
 	public static String[] jsontToTextConverterarray(String jsonFile) throws IOException, ParseException{
-		
+
 		String[] typo1 = new String[5];
 		String typo="";
 		int i=0;
-           JSONParser jsonParser = new JSONParser();
-    		JSONObject jsonObject = (JSONObject) jsonParser.parse(jsonFile);
-            JSONArray characters = (JSONArray) jsonObject.get("entities");
-            Iterator<JSONObject> iterator = characters.iterator();
-             while (iterator.hasNext()) {
-            	JSONObject factObj = (JSONObject) iterator.next();
-            	 //typo= (String []) factObj.get("type");
-            	typo= (String) factObj.get("type");
-            	typo1[i]=typo;
-            	i++;
-            	 System.out.println(typo);
-            	 //String value = (String) factObj.get("value");
-            	 
-            }
-       
-            return typo1;
-       
+		JSONParser jsonParser = new JSONParser();
+		JSONObject jsonObject = (JSONObject) jsonParser.parse(jsonFile);
+		JSONArray characters = (JSONArray) jsonObject.get("entities");
+		Iterator<JSONObject> iterator = characters.iterator();
+		while (iterator.hasNext()) {
+			JSONObject factObj = (JSONObject) iterator.next();
+			//typo= (String []) factObj.get("type");
+			typo= (String) factObj.get("type");
+			typo1[i]=typo;
+			i++;
+			System.out.println(typo);
+			//String value = (String) factObj.get("value");
+
+		}
+
+		return typo1;
+
+	}
+
+	public static String jsontToTextConverterSourceArray(String jsonFile) throws IOException, ParseException{
+
+
+		String typo="";
+		JSONParser jsonParser = new JSONParser();
+		JSONObject jsonObject = (JSONObject) jsonParser.parse(jsonFile.toString());
+		JSONArray characters = (JSONArray) jsonObject.get("outputs");
+		Iterator<JSONObject> iterator = characters.iterator();
+		while (iterator.hasNext()) {
+			JSONObject factObj = (JSONObject) iterator.next();
+			//typo= (String []) factObj.get("type");
+			typo= (String) factObj.get("source");
+
+			//String value = (String) factObj.get("value");
+
+		}
+
+		return typo;
+
 	}
 	
-public static String jsontToTextConverterSourceArray(String jsonFile) throws IOException, ParseException{
+	// This json converter is working on the dictionary elements in Resources Dictionary
+	public static String dictionaryJsontToTextConverter(String jsonFile) throws ParseException{
 		
+		JSONParser jsonParser = new JSONParser();
+		JSONObject jsonObject = (JSONObject) jsonParser.parse(jsonFile);
+		JSONObject jsonObjects = (JSONObject) jsonObject.get("added");
 		
-		String typo="";
-		 JSONParser jsonParser = new JSONParser();
-    		JSONObject jsonObject = (JSONObject) jsonParser.parse(jsonFile.toString());
-            JSONArray characters = (JSONArray) jsonObject.get("outputs");
-            Iterator<JSONObject> iterator = characters.iterator();
-             while (iterator.hasNext()) {
-            	JSONObject factObj = (JSONObject) iterator.next();
-            	 //typo= (String []) factObj.get("type");
-            	typo= (String) factObj.get("source");
-            	
-            	 //String value = (String) factObj.get("value");
-            	 
-            }
-       
-            return typo;
+		return jsonObjects.get("id").toString();
 		
-}
+	}
+	
+	
 
 }

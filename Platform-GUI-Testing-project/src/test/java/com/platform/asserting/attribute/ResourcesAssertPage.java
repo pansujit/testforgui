@@ -21,10 +21,63 @@ public class ResourcesAssertPage {
 	private static final String lookUpRespose4="targets";
 	private static final String LookUpResponse="LanguagePairs";
 	private static final String createDictionary="{\"dictionary\":{ \"sourceLang\":\"en\",\"name\":\"My dict\",\"targetLangs\":\"fr\",\"comments\":\"hehheh\" , \"type\":\"UD\"  }}";
-	
-	
-	
-	
+	private static final String addDictionary="id";
+	private static final String updateDictionary="{"
+			+ "\"dictionary\": {"
+			+ "\"sourceLang\": \"en\","
+			+ "\"name\": \"My Dictionary\","
+			+ "\"targetLangs\":\"fr,es,it\","
+			+ "\"comments\": \"My new dictionary enfr\","
+			+ "\"type\": \"UD\" "
+			+ "}"
+			+ "}";
+	private static final String updateDictionaryresponsebody="updated";
+	private static final String listDictionariesAssert="dictionaries";
+
+	private static final String sortDictInAscendingOrder=  "{ \"sort\": "
+			+ "{"
+			+ "\"name\": 1,"
+			+"\"sourceLang\": 1,"
+			+"\"targetLangs\": 1"
+			+"}}";
+	public static String getSortdictinascendingorder() {
+		return sortDictInAscendingOrder;
+	}
+
+	public static String getSortdictindescendingorder() {
+		return sortDictInDescendingOrder;
+	}
+
+	private static final String sortDictInDescendingOrder=  "{ \"sort\": "
+			+ "{"
+			+ "\"name\": -1,"
+			+"\"sourceLang\": 1,"
+			+"\"targetLangs\": 1"
+			+"}}";
+
+
+
+
+
+	public static String getListdictionariesassert() {
+		return listDictionariesAssert;
+	}
+
+	public static String getUpdatedictionaryresponsebody() {
+		return updateDictionaryresponsebody;
+	}
+
+	public static String getUpdatedictionary() {
+		return updateDictionary;
+	}
+
+	public static String getCreatedictionary() {
+		return createDictionary;
+	}
+
+	public static String getAdddictionary() {
+		return addDictionary;
+	}
 
 	public static String getLookupresponse() {
 		return LookUpResponse;

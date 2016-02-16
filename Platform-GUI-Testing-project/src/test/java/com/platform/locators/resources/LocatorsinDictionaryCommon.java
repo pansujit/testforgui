@@ -12,7 +12,7 @@ import org.openqa.selenium.support.How;
  * @author pandey
  *
  */
-public class LocatorsinDcitionaryCommon {
+public class LocatorsinDictionaryCommon {
 	
 	
 	
