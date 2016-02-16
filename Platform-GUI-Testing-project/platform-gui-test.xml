@@ -199,7 +199,7 @@
 	</test>
 	<test name="testme26">
 		<classes>
- 			<class name="com.platform.gui.resources.test.TestResourcesDictionaryListDictionariesAscendingOrders"></class>
+ 			<class name="com.platform.gui.resources.test.TestResourcesDictionaryListDictionariesAscendingOrder"></class>
  			
 		</classes>
 		
