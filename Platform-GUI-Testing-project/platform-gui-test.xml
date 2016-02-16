@@ -168,6 +168,50 @@
 		</classes>
 		
 	</test>
+	 <test name="testme22">
+		<classes>
+ 			<class name="com.platform.gui.resources.test.TestResourcesDictionaryAddDictionary"></class>
+ 			
+		</classes>
+		
+	</test>
+	<test name="testme23">
+		<classes>
+ 			<class name="com.platform.gui.resources.test.TestResourcesDictionaryDeleteADictionary"></class>
+ 			
+		</classes>
+		
+	</test>
+	<test name="testme24">
+		<classes>
+ 			<class name="com.platform.gui.resources.test.TestResourcesDictionaryUpdateADictionary"></class>
+ 			
+		</classes>
+		
+	</test>
+	
+	<test name="testme25">
+		<classes>
+ 			<class name="com.platform.gui.resources.test.TestResourcesDictionaryListDictionaries"></class>
+ 			
+		</classes>
+		
+	</test>
+	<test name="testme26">
+		<classes>
+ 			<class name="com.platform.gui.resources.test.TestResourcesDictionaryListDictionariesAscendingOrders"></class>
+ 			
+		</classes>
+		
+	</test>
+		<test name="testme27">
+		<classes>
+ 			<class name="com.platform.gui.resources.test.TestResourcesDictionaryListDictionariesDescendingOrder"></class>
+ 			
+		</classes>
+		
+	</test>
+		
 	
 	
 	
