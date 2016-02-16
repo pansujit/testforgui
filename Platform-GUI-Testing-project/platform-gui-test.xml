@@ -211,6 +211,43 @@
 		</classes>
 		
 	</test>
+	
+	<test name="testme27">
+		<classes>
+ 			<class name="com.platform.gui.resources.test.TestResourcesDictionaryAddAnEntry"></class>
+ 			
+		</classes>
+		
+	</test>
+	<test name="testme28">
+		<classes>
+ 			<class name="com.platform.gui.resources.test.TestResourcesDictionaryDeleteAnEntry"></class>
+ 			
+		</classes>
+		
+	</test>
+	
+	<test name="testme29">
+		<classes>
+ 			<class name="com.platform.gui.resources.test.TestResourcesDictionaryUpdateAnEntry"></class>
+ 			
+		</classes>
+		
+	</test>
+	
+		<test name="testme31">
+		<classes>
+ 			<class name="com.platform.gui.resources.test.TestResourcesDictionaryExportADictionary"></class>
+ 			
+		</classes>
+		
+	</test>
+	
+	
+	
+	
+		
+		
 		
 	
 	

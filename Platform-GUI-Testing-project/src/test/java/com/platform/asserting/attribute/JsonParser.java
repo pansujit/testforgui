@@ -124,6 +124,50 @@ public class JsonParser {
 		
 	}
 	
+	//---------------------------------------------------------------------------------//
 	
+	/**
+	 * 
+	 * This methods will return one value among multiple id
+	 * @param jsonfile
+	 * @return
+	 * @throws ParseException
+	 */
+	public static String[] jsonTotext(String jsonfile, String sourceId, String targetId) throws ParseException{
+		String key="";
+		String[] value=new String[3];
+		JSONParser jsonParser = new JSONParser();
+		JSONObject jsonObject = (JSONObject) jsonParser.parse(jsonfile);
+		Set<?> keys = jsonObject.keySet();
+		Iterator<?> a = keys.iterator();
+		while(a.hasNext()) {
+
+			if(sourceId!=null && targetId!=null){
+				key = (String)a.next();
+				if (key.equals(sourceId)){
+					value[0] = (String)jsonObject.get(key);
+				}
+				if (key.equals(targetId)){
+					value[1] = (String)jsonObject.get(key);
+				}
+
+			}
+			else if(sourceId!=null && targetId==null){
+				key = (String)a.next();
+				if (key.equals(sourceId)){
+					value[0] = (String)jsonObject.get(key);
+				}
+
+			}
+			else{
+				key = (String)a.next();
+				value[0] = (String)jsonObject.get(key);
+			}
+
+
+		}
+		return value;
+	}
+
 
 }

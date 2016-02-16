@@ -55,9 +55,50 @@ public class ResourcesAssertPage {
 			+"\"targetLangs\": 1"
 			+"}}";
 
+	private static final String addAnEntryInput="{ \"entry\": {"
+			+"\"sourceLang\": \"en\","
+			+"\"targetLang\": \"fr\","
+			+"\"source\": \"dog\","
+			+"\"target\": \"chien\","
+			+ "\"type\": \"translation\","
+			+"\"sourcePos\": \"noun\","
+			+"\"priority\": \"9\""
+			+"}}";
+	private static final String AssertAddAnEntry="ok";
+	private static final String deleteAnEntryAssert="entry deleted with success";
+	private static final String updateAnEntry="{\"sourceId\": \"%s\","
+			+ "\"targetId\": \"%s\","
+			+ "\"update\": {\"sourceLang\": \"en\","
+			+ "\"targetLang\": \"fr\","
+			+ "\"source\": \"bug\","
+			+ "\"target\": \"insecte\","
+			+ "\"type\": \"translation\","
+			+ "\"sourcePos\": \"noun\","
+			+ "\"targetPos\": \"noun\","
+			+ "\"priority\": 3}}";
+	private static final String confidenceAssert="confidence";
 
 
 
+	public static String getConfidenceassert() {
+		return confidenceAssert;
+	}
+
+	public static String getUpdateanentry() {
+		return updateAnEntry;
+	}
+
+	public static String getDeleteanentryassert() {
+		return deleteAnEntryAssert;
+	}
+
+	public static String getAssertaddanentry() {
+		return AssertAddAnEntry;
+	}
+
+	public static String getAddanentryinput() {
+		return addAnEntryInput;
+	}
 
 	public static String getListdictionariesassert() {
 		return listDictionariesAssert;
