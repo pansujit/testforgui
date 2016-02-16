@@ -212,7 +212,7 @@
 		
 	</test>
 	
-	<test name="testme27">
+	<test name="testme30">
 		<classes>
  			<class name="com.platform.gui.resources.test.TestResourcesDictionaryAddAnEntry"></class>
  			
