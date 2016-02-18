@@ -1,52 +1,88 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="resourceCorpus" verbose="1">
- 	
-		<test name="resourceCorpus1">
+
+	<test name="resourceCorpus1">
 		<classes>
- 			<class name="com.platform.gui.resources.corpus.test.TestResourcesCorpusAddANewCorpus"></class>
- 			
+			<class
+				name="com.platform.gui.resources.corpus.test.TestResourcesCorpusAddANewCorpus"></class>
+
 		</classes>
-		
+
 	</test>
-	
+
 	<test name="resourceCorpus2">
 		<classes>
- 			<class name="com.platform.gui.resources.corpus.test.TestResourcesCorpusCorpusExists"></class>
- 			
+			<class
+				name="com.platform.gui.resources.corpus.test.TestResourcesCorpusCorpusExists"></class>
+
 		</classes>
-		
+
 	</test>
-	
+
 	<test name="resourceCorpus3">
 		<classes>
- 			<class name="com.platform.gui.resources.corpus.test.TestResourcesCorpusDeleteCorpus"></class>
- 			
+			<class
+				name="com.platform.gui.resources.corpus.test.TestResourcesCorpusDeleteCorpus"></class>
+
 		</classes>
-		
+
 	</test>
-		<test name="resourceCorpus4">
+	<test name="resourceCorpus4">
 		<classes>
- 			<class name="com.platform.gui.resources.corpus.test.TestResourcesCorpusDetailCorpus"></class>
- 			
+			<class
+				name="com.platform.gui.resources.corpus.test.TestResourcesCorpusDetailCorpus"></class>
+
 		</classes>
-		
+
 	</test>
 	<test name="resourceCorpus5">
 		<classes>
- 			<class name="com.platform.gui.resources.corpus.test.TestResourcesCorpusUpdateCorpusProperties"></class>
- 			
+			<class
+				name="com.platform.gui.resources.corpus.test.TestResourcesCorpusUpdateCorpusProperties"></class>
+
 		</classes>
-		
+
 	</test>
 	<test name="resourceCorpus6">
 		<classes>
- 			<class name="com.platform.gui.resources.corpus.test.TestResourcesCorpusAddCorpusSegments"></class>
- 			
+			<class
+				name="com.platform.gui.resources.corpus.test.TestResourcesCorpusAddCorpusSegments"></class>
+
 		</classes>
-		
+
+	</test>
+	<test name="resourceCorpus7">
+		<classes>
+			<class
+				name="com.platform.gui.resources.corpus.test.TestResourcesCorpusDeleteCorpusSegments"></class>
+
+		</classes>
+	</test>
+		<test name="resourceCorpus8">
+		<classes>
+			<class
+				name="com.platform.gui.resources.corpus.test.TestResourcesCorpusListCorpusSegments"></class>
+
+		</classes>
+	</test>
+	<test name="resourceCorpus9">
+		<classes>
+			<class
+				name="com.platform.gui.resources.corpus.test.TestResourcesCorpusListCorpora"></class>
+
+		</classes>
+	</test>
+	<test name="resourceCorpus10">
+		<classes>
+			<class
+				name="com.platform.gui.resources.corpus.test.TestResourcesCorpusImportCorpus"></class>
+
+		</classes>
 	</test>
 	
 	
 	
+
+
 </suite> <!-- Suite -->

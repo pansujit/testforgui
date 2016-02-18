@@ -15,7 +15,11 @@ import com.platform.locators.resources.corpus.LocatorsInCorpusAddNewCorpus;
 import com.platform.locators.resources.corpus.LocatorsInCorpusCorpusExist;
 import com.platform.locators.resources.corpus.LocatorsInCorpusDeleteCorpus;
 import com.platform.locators.resources.corpus.LocatorsInCorpusDetailCorpus;
+import com.platform.locators.resources.corpus.LocatorsInCorpusImportCorpus;
+import com.platform.locators.resources.corpus.LocatorsInCorpusListCorpora;
+import com.platform.locators.resources.corpus.LocatorsInCorpusListCorpusSegments;
 import com.platform.locators.resources.corpus.LocatorsInCorpusUpdateCorpusProperties;
+import com.platform.locators.resources.corpus.LocatorsInCorpusDeleteCorpusSegments;
 import com.platform.locators.resources.dictionary.LocatorsInResourcesAPI;
 
 /**
@@ -47,10 +51,10 @@ public class ResourcesCorpus {
 		LocatorsInResourcesAPI locatorsinResourcesapi=PageFactory.initElements(driver, LocatorsInResourcesAPI.class);
 		locatorsinResourcesapi.selectCorpus.click();
 		Thread.sleep(1000);
-		}
-	
+	}
+
 	public String[] addnewEmptyCorpus() throws InterruptedException{
-		
+
 		LocatorsInCorpusAddNewCorpus addnewcorpus=PageFactory.initElements(driver, LocatorsInCorpusAddNewCorpus.class);
 		addnewcorpus.selectAddANewEmptyCorpus.click();
 		String nameOfCorpus=CorpusAssertPage.getName();
@@ -60,11 +64,11 @@ public class ResourcesCorpus {
 		Thread.sleep(2000);
 		String[] lookUpText={addnewcorpus.getAddANewEmptyCorpusResponseBody.getText().toString(),addnewcorpus.getAddANewEmptyCorpusResponseCode.getText(),nameOfCorpus};
 		return lookUpText;
-		
-		
+
+
 	}
-	
-	
+
+
 	/**This method will add a new corpus and return the response body and text to the calling method
 	 * @return
 	 * @throws InterruptedException
@@ -72,8 +76,8 @@ public class ResourcesCorpus {
 	public String[] corpusAddANewEmptyCorpus() throws InterruptedException{
 		commonInDictionay();
 		return addnewEmptyCorpus();
-		
-					
+
+
 	}
 	/**
 	 * This willl delete a corpus and send the response code to the called testclass
@@ -93,7 +97,7 @@ public class ResourcesCorpus {
 		deletecorpus.clickDeleteCorpusTryButton.click();
 		Thread.sleep(2000);
 		return deletecorpus.getDeleteCorpusResponseCode.getText();
-								
+
 	}
 	/** This will add corpus and check whether it is exist or not
 	 * @return
@@ -111,9 +115,9 @@ public class ResourcesCorpus {
 		Thread.sleep(1000);
 		return ((corpusexist.getCorpusExistResponseBody.getText().toString()).contains(CorpusAssertPage.getAssertcorpusexist())
 				&& corpusexist.getCorpusExistResponseCode.getText().contains(CorpusAssertPage.getAssertresponsecode()));
-					
+
 	}
-	
+
 	/**
 	 * This will add corpus and assert details of that corpus
 	 * @return
@@ -133,11 +137,11 @@ public class ResourcesCorpus {
 		String lookUp=detailcorpus.getDetailCorpusResponseBody.getText().toString();
 		String lookUpInt=detailcorpus.getDetailCorpusResponseCode.getText();
 		return((lookUp.contains(CorpusAssertPage.getAssertdetailcorpus())) &&
-		(lookUp.contains(CorpusAssertPage.getAssertstatus())) &&
-		(lookUpInt.contains(CorpusAssertPage.getAssertresponsecode())));
-		
+				(lookUp.contains(CorpusAssertPage.getAssertstatus())) &&
+				(lookUpInt.contains(CorpusAssertPage.getAssertresponsecode())));
+
 	}
-	
+
 	public Boolean corpusUpdateCorpusProperties() throws InterruptedException, IOException, ParseException{
 		commonInDictionay();
 		String[] lookUpText=addnewEmptyCorpus();
@@ -151,13 +155,20 @@ public class ResourcesCorpus {
 		String lookUp=properties.getUpdateCorpusPropertiesResponseBody.getText().toString();
 		String lookUpInt=properties.getUpdateCorpusPropertiesResponseCode.getText();
 		return ((lookUp.contains(CorpusAssertPage.getAssertupdatecorpus())) &&
-		(lookUpInt.contains(CorpusAssertPage.getAssertresponsecode())));
-		
-	
-		}
-	
+				(lookUpInt.contains(CorpusAssertPage.getAssertresponsecode())));
+
+
+	}
+
+	/**
+	 * This is the generic method for adding the segment in the corpus
+	 * @return
+	 * @throws InterruptedException
+	 * @throws IOException
+	 * @throws ParseException
+	 */
 	public String[] addCorpusSegments() throws InterruptedException, IOException, ParseException{
-		
+
 		String[] lookUpText=addnewEmptyCorpus();
 		String corpusId=JsonParserCorpus.getCorpusId(lookUpText[0]);
 		LocatorsInCorpusAddCorpusSegments addsegments=PageFactory.initElements(driver, LocatorsInCorpusAddCorpusSegments.class);
@@ -165,21 +176,111 @@ public class ResourcesCorpus {
 		addsegments.inputAddCorpusSegmentsbody.sendKeys(String.format(CorpusAssertPage.getInputinaddcorpussegment(), corpusId));
 		addsegments.clickAddCorpusSegmentsTryButton.click();
 		Thread.sleep(2000);
-		String[] lookUp={addsegments.getAddCorpusSegmentsResponseBody.getText().toString(),addsegments.getAddCorpusSegmentsResponseCode.getText()};
+		String[] lookUp={addsegments.getAddCorpusSegmentsResponseBody.getText().toString(),addsegments.getAddCorpusSegmentsResponseCode.getText(),corpusId};
 		return lookUp;
-		
+
 	}
-	
+
+	/** This method add the corpus segment and 
+	 * @return
+	 * @throws InterruptedException
+	 * @throws IOException
+	 * @throws ParseException
+	 */
 	public Boolean corpusAddCorpusSegments() throws InterruptedException, IOException, ParseException{
 		commonInDictionay();
 		String[] lookUp=addCorpusSegments();
 		return (lookUp[0].contains(CorpusAssertPage.getAssertinaddcorpussegment()) && lookUp[0].contains(CorpusAssertPage.getAssertinaddcorpussegmentcomma()) &&
-		lookUp[1].contains(CorpusAssertPage.getAssertresponsecode()));
-		
-				
+				lookUp[1].contains(CorpusAssertPage.getAssertresponsecode()));
+
+
+	}
+	/**
+	 * This will delete the corpus segments from the corpus
+	 * @return
+	 * @throws InterruptedException
+	 * @throws IOException
+	 * @throws ParseException
+	 */
+	public Boolean corpusDeleteCorpusSegments() throws InterruptedException, IOException, ParseException{
+		commonInDictionay();
+		String[] lookUp=addCorpusSegments();
+		LocatorsInCorpusDeleteCorpusSegments deletesegment=PageFactory.initElements(driver, LocatorsInCorpusDeleteCorpusSegments.class);
+		Thread.sleep(1000);
+		deletesegment.selectDeleteCorpusSegment.click();
+		deletesegment.inputDeleteCorpusSegmentCorpusId.sendKeys(lookUp[2].toString());
+		String corpusSegId=JsonParserCorpus.getsegmentId(lookUp[0]);
+		deletesegment.inputDeleteCorpusSegmentSegId.sendKeys(corpusSegId);
+		deletesegment.clickDeleteCorpusSegmentTryButton.click();
+		Thread.sleep(1000);
+		String lookUpText=deletesegment.getDeleteCorpusSegmentResponseBody.getText().toString();
+		String lookUpInt=deletesegment.getDeleteCorpusSegmentResponseCode.getText();
+		return(lookUpText.contains(CorpusAssertPage.getAssertdeletesegment()) && lookUpInt.contains(CorpusAssertPage.getAssertresponsecode()));
+
+
 	}
 
+	public Boolean corpusListCorpusSegments() throws InterruptedException, IOException, ParseException{
+		commonInDictionay();
+		String[] lookUp=addCorpusSegments();
+		LocatorsInCorpusListCorpusSegments listsegments=PageFactory.initElements(driver, LocatorsInCorpusListCorpusSegments.class);
+		listsegments.selectListCorpusSegments.click();
+		listsegments.inputListCorpusSegmentsCorpusId.sendKeys(lookUp[2]);
+		listsegments.clickListCorpusSegmentsTryButton.click();
+		Thread.sleep(1000);
+		String lookUpText=listsegments.getListCorpusSegmentsResponseBody.getText().toString();
+		String lookUpInt=listsegments.getListCorpusSegmentsResponseCode.getText();
+		return (lookUpText.contains(CorpusAssertPage.getAssertinaddcorpussegment()) && lookUpInt.contains(CorpusAssertPage.getAssertresponsecode()));
+
+
+	}
+
+	/**
+	 * This method list the all corpora available. No  filters and selectors are used
+	 * @return
+	 * @throws InterruptedException
+	 * @throws IOException
+	 * @throws ParseException
+	 */
+	public Boolean corpusListCorpora() throws InterruptedException, IOException, ParseException{
+		commonInDictionay();
+		LocatorsInCorpusListCorpora listcorpora=PageFactory.initElements(driver, LocatorsInCorpusListCorpora.class);
+		listcorpora.selectListCorpora.click();
+		listcorpora.clickListCorporaTryButton.click();
+		Thread.sleep(1000);
+		String lookUpText=listcorpora.getListCorporaResponseBody.getText().toString();
+		String lookUpInt=listcorpora.getListCorporaResponseCode.getText();
+		return (lookUpText.contains(CorpusAssertPage.getAssertdetailcorpus()) && lookUpText.contains(CorpusAssertPage.getAssertlistcorpora()) 
+				&& lookUpInt.contains(CorpusAssertPage.getAssertresponsecode()));
+
+	}
+	/**
+	 * this method will import the corpus in bitext format
+	 * @return
+	 * @throws InterruptedException
+	 * @throws IOException
+	 * @throws ParseException
+	 */
+	public Boolean corpusImportCorpus() throws InterruptedException, IOException, ParseException{
+		commonInDictionay();
+		LocatorsInCorpusImportCorpus importcorpus=PageFactory.initElements(driver, LocatorsInCorpusImportCorpus.class);
+		importcorpus.selectImportCorpus.click();
+		importcorpus.inputImportCorpusName.sendKeys(CorpusAssertPage.getName());
+		importcorpus.inputImportCorpusInputFile.sendKeys(CommonInResources.fileCheck("importCorpus.txt"));
+		importcorpus.selectImportCorpusFormatBiText.click();
+		importcorpus.clickImportCorpusTryButton.click();
+		Thread.sleep(1000);
+		String lookUpText=importcorpus.getImportCorpusResponseBody.getText().toString();
+		String lookUpInt=importcorpus.getImportCorpusResponseCode.getText();
+		return (lookUpText.contains(CorpusAssertPage.getAssertimportcorpusfirst()) && lookUpText.contains(CorpusAssertPage.getAssertimportcorpussecond()) 
+		&& lookUpInt.contains(CorpusAssertPage.getAssertresponsecode()));
+		
+		
 			
-	
+	}
+
+
+
+
 
 }

@@ -3,6 +3,8 @@
  */
 package com.platform.resources.Method;
 
+import java.io.File;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
@@ -36,6 +38,23 @@ public class CommonInResources {
 		CommonLocators commonlocator=PageFactory.initElements(driver, CommonLocators.class);
 		commonlocator.apiKey.sendKeys("7b9b3039-c7e7-4017-8c19-a69fd9ed35b4");
 
+	}
+	
+	public static String fileCheck(String fileName){
+		
+		String fileTranslateFile=null;
+		File file= new File(String.format("src/test/resources/%s", fileName));
+		if(file.exists()){
+			fileTranslateFile=file.getAbsolutePath();
+			
+		}
+		
+		else
+		{
+			System.out.println("NO FILE FOUND");
+		}
+		
+		return fileTranslateFile;
 	}
 
 

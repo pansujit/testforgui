@@ -31,9 +31,29 @@ public class CorpusAssertPage {
 			+ " }]}]}";
 	private static final String assertInAddCorpusSegment="segments";
 	private static final String assertInAddCorpusSegmentComma=",";
+	private static final String assertDeleteSegment="nbDeleted";
+	private static final String assertListCorpora="files";
+	private static final String assertImportCorpusFirst="corpus";
+	private static final String assertImportCorpusSecond="id";
 	
 	
 
+
+	public static String getAssertimportcorpusfirst() {
+		return assertImportCorpusFirst;
+	}
+
+	public static String getAssertimportcorpussecond() {
+		return assertImportCorpusSecond;
+	}
+
+	public static String getAssertlistcorpora() {
+		return assertListCorpora;
+	}
+
+	public static String getAssertdeletesegment() {
+		return assertDeleteSegment;
+	}
 
 	public static String getAssertinaddcorpussegmentcomma() {
 		return assertInAddCorpusSegmentComma;
