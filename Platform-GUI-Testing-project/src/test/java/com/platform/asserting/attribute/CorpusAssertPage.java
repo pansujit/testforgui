@@ -17,7 +17,21 @@ public class CorpusAssertPage {
 	private static final String TargetLanguage="fr";
 	private static final String assertAddANewCorpus="corpus";
 	private static final String assertCorpusExist="true";
+	private static final String assertDetailCorpus="createdAt";
+	private static final String assertStatus="status";
+
 	
+	
+
+
+	public static String getAssertdetailcorpus() {
+		return assertDetailCorpus;
+	}
+
+	public static String getAssertstatus() {
+		return assertStatus;
+	}
+
 	public static String getAssertcorpusexist() {
 		return assertCorpusExist;
 	}

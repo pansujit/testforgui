@@ -25,6 +25,14 @@
 		</classes>
 		
 	</test>
+		<test name="resourceCorpus4">
+		<classes>
+ 			<class name="com.platform.gui.resources.corpus.test.TestResourcesCorpusDetailCorpus"></class>
+ 			
+		</classes>
+		
+	</test>
+	
 	
 	
 </suite> <!-- Suite -->

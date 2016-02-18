@@ -14,6 +14,7 @@ import com.platform.asserting.attribute.JsonParserCorpus;
 import com.platform.locators.resources.corpus.LocatorsInCorpusAddNewCorpus;
 import com.platform.locators.resources.corpus.LocatorsInCorpusCorpusExist;
 import com.platform.locators.resources.corpus.LocatorsInCorpusDeleteCorpus;
+import com.platform.locators.resources.corpus.LocatorsInCorpusDetailCorpus;
 import com.platform.locators.resources.dictionary.LocatorsInResourcesAPI;
 
 /**
@@ -82,6 +83,7 @@ public class ResourcesCorpus {
 	public String corpusDeleteCorpus() throws InterruptedException, IOException, ParseException{
 		commonInDictionay();
 		String[] lookUpText=addnewEmptyCorpus();
+		Thread.sleep(1000);
 		String corpusId=JsonParserCorpus.getCorpusId(lookUpText[0]);
 		LocatorsInCorpusDeleteCorpus deletecorpus=PageFactory.initElements(driver, LocatorsInCorpusDeleteCorpus.class);
 		deletecorpus.selectDeleteCorpus.click();
@@ -109,6 +111,29 @@ public class ResourcesCorpus {
 				&& corpusexist.getCorpusExistResponseCode.getText().contains(CorpusAssertPage.getAssertresponsecode()));
 					
 	}
+	
+	public Boolean corpusDetailCorpus() throws InterruptedException, IOException, ParseException{
+		commonInDictionay();
+		String[] lookUpText=addnewEmptyCorpus();
+		String corpusId=JsonParserCorpus.getCorpusId(lookUpText[0]);
+		LocatorsInCorpusDetailCorpus detailcorpus=PageFactory.initElements(driver, LocatorsInCorpusDetailCorpus.class);
+		detailcorpus.selectDetailCorpus.click();
+		detailcorpus.inputDetailCorpusCorpusId.sendKeys(corpusId);
+		detailcorpus.clickDetailCorpusTryButton.click();
+		Thread.sleep(1000);
+		String lookUp=detailcorpus.getDetailCorpusResponseBody.getText().toString();
+		String lookUpInt=detailcorpus.getDetailCorpusResponseCode.getText();
+		return((lookUp.contains(CorpusAssertPage.getAssertdetailcorpus())) &&
+		(lookUp.contains(CorpusAssertPage.getAssertstatus())) &&
+		(lookUpInt.contains(CorpusAssertPage.getAssertresponsecode())));
+		
+		
+		
+	}
+
+		
+	
+	
 	
 	
 	

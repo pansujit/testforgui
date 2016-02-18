@@ -58,7 +58,7 @@ public class ResourcesDictionary {
 		commonInDictionay();	
 		LocatorsInDictionarySupportedLanguages supportedLanguage=PageFactory.initElements(driver, LocatorsInDictionarySupportedLanguages.class);
 		supportedLanguage.getSupportLangButton.click();
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 		return ((supportedLanguage.getsupportedLangResp.getText().contains(ResourcesAssertPage.getDictionaryresponsecode()))
 				&& (supportedLanguage.getsupportedLangRespData.getText().toString().contains(ResourcesAssertPage.getDictionarysupplanguage()))) ;
 
