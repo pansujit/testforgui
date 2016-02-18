@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="textTranslation" verbose="1">
+	<test name="textTranslation1">
+		<classes>
+			<class name="com.platform.gui.translation.text.test.TestTranslationTextENtoFR"></class>
+
+		</classes>
+
+	</test>
+
+
+	<test name="textTranslation2">
+		<classes>
+			<class
+				name="com.platform.gui.translation.text.test.TestTranslationTextENtoFRWithBackTranslationTrue"></class>
+
+		</classes>
+
+	</test>
+
+	<test name="textTranslation3">
+		<classes>
+			<class name="com.platform.gui.translation.text.test.TestTranslationTextENtoFRWithSourceTrue"></class>
+
+		</classes>
+
+	</test>
+
+
+
+</suite> <!-- Suite -->

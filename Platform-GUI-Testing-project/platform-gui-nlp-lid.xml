@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="nlpLid" verbose="1">
+	<test name="nlpLid1">
+		<classes>
+			<class name="com.platform.gui.nlp.lid.test.TestNLPLidDocWithInput"></class>
+
+		</classes>
+
+	</test>
+
+	<test name="nlpLid2">
+		<classes>
+			<class name="com.platform.gui.nlp.lid.test.TestNLPLidDocWithInputFile"></class>
+
+		</classes>
+
+	</test>
+	<test name="nlpLid3">
+		<classes>
+			<class name="com.platform.gui.nlp.lid.test.TestNLPLidParaWithInput"></class>
+
+		</classes>
+
+	</test>
+	<test name="nlpLid4">
+		<classes>
+			<class name="com.platform.gui.nlp.lid.test.TestNLPLidParaWithInputFile"></class>
+
+		</classes>
+
+	</test>
+
+
+
+
+</suite> <!-- Suite -->

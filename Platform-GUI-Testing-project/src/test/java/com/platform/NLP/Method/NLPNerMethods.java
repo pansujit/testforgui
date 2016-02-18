@@ -11,8 +11,8 @@ import org.openqa.selenium.support.PageFactory;
 
 import com.platform.asserting.attribute.JsonParser;
 import com.platform.common.input.TextAndOtherInputs;
+import com.platform.locators.nlp.lid.LocatorsInNLPNerAPI;
 import com.platform.method.commonInReference.CommonInReference;
-import com.platform.path.locator.LocatorsInNLPNerAPI;
 
 /**
  * @author sujit
@@ -64,7 +64,7 @@ public class NLPNerMethods {
 		//System.out.println(myassert);				
 	}
 	
-	public String[] getAnnotationWithInputFile() throws InterruptedException, ParseException, IOException{
+	public String getAnnotationWithInputFile() throws InterruptedException, ParseException, IOException{
 		
 		
 		CommonInReference comoninreferece=PageFactory.initElements(driver, CommonInReference.class);
@@ -77,12 +77,12 @@ public class NLPNerMethods {
 		locatorsinnlpAPI.clickNerAnnotationTryButton.click();
 		Thread.sleep(2000);
 		String myString=locatorsinnlpAPI.getNerAnnotationResult.getText().toString();
-		System.out.println(myString);
-		return JsonParser.jsontToTextConverterarray(myString);
+		return (myString);
+		//return JsonParser.jsontToTextConverterarray(myString);
 		//System.out.println(myassert);				
 	}
 	
-	public String[] getAnnotationWithInput() throws InterruptedException, ParseException, IOException{
+	public String getAnnotationWithInput() throws InterruptedException, ParseException, IOException{
 		
 		
 		CommonInReference comoninreferece=PageFactory.initElements(driver, CommonInReference.class);
@@ -95,9 +95,10 @@ public class NLPNerMethods {
 		locatorsinnlpAPI.clickNerAnnotationTryButton.click();
 		Thread.sleep(2000);
 		String myString=locatorsinnlpAPI.getNerAnnotationResult.getText().toString();
-		System.out.println(myString);
-		return JsonParser.jsontToTextConverterarray(myString);
-		//System.out.println(myassert);				
+		return myString;
+		//return JsonParser.jsontToTextConverterarray123(myString);
+		//System.out.println(myassert);		
+		//don't forget to check the json converter for this item
 	}
 
 }

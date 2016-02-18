@@ -5,9 +5,8 @@
 	<artifactId>Platform-GUI-Testing-project</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<properties>
-		<suiteXmlFile>platform-gui-test.xml</suiteXmlFile>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
-
 	<dependencies>
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
@@ -40,13 +39,18 @@
 				<version>2.19.1</version>
 				<configuration>
 					<suiteXmlFiles>
-						<suiteXmlFile>${suiteXmlFile}</suiteXmlFile>
+						<suiteXmlFile>platform-gui-nlp-lid.xml</suiteXmlFile>
+						<suiteXmlFile>platform-gui-multimodal-speech.xml</suiteXmlFile>
+						<suiteXmlFile>platform-gui-nlp-ner.xml</suiteXmlFile>
+						<suiteXmlFile>platform-gui-resources-corpus.xml</suiteXmlFile>
+						<suiteXmlFile>platform-gui-resources-dictionary.xml</suiteXmlFile>
+						<suiteXmlFile>platform-gui-translation-filetranslation.xml</suiteXmlFile>
+						<suiteXmlFile>platform-gui-translation-text.xml</suiteXmlFile>
+
 					</suiteXmlFiles>
+
 				</configuration>
 			</plugin>
-
-
-
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>

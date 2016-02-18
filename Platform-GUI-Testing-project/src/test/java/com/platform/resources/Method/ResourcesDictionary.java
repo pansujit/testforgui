@@ -10,21 +10,22 @@ import org.openqa.selenium.support.PageFactory;
 
 import com.platform.asserting.attribute.JsonParser;
 import com.platform.asserting.attribute.ResourcesAssertPage;
-import com.platform.locators.resources.LocatorsInDictionaryAddAnEntry;
-import com.platform.locators.resources.LocatorsInDictionaryAddDictionary;
-import com.platform.locators.resources.LocatorsInDictionaryDeleteAnEntry;
-import com.platform.locators.resources.LocatorsInDictionaryDeleteDictionay;
-import com.platform.locators.resources.LocatorsInDictionaryExportADictionary;
-import com.platform.locators.resources.LocatorsInDictionaryListDictionaries;
-import com.platform.locators.resources.LocatorsInDictionaryLookUp;
-import com.platform.locators.resources.LocatorsInDictionaryLookUpSupportedLanguage;
-import com.platform.locators.resources.LocatorsInDictionarySupportedLanguages;
-import com.platform.locators.resources.LocatorsInDictionaryUpdateADictionary;
-import com.platform.locators.resources.LocatorsInDictionaryUpdateAnEntry;
-import com.platform.path.locator.CommonLocators;
-import com.platform.path.locator.LocatorsInRESTNLPApi;
-import com.platform.path.locator.LocatorsInReferenceDropDown;
-import com.platform.path.locator.LocatorsInResourcesAPI;
+import com.platform.gui.test.baseclass.CommonLocators;
+import com.platform.gui.test.baseclass.LocatorsInReferenceDropDown;
+import com.platform.locators.nlp.lid.LocatorsInRESTNLPApi;
+import com.platform.locators.resources.dictionary.LocatorsInDictionaryAddAnEntry;
+import com.platform.locators.resources.dictionary.LocatorsInDictionaryAddDictionary;
+import com.platform.locators.resources.dictionary.LocatorsInDictionaryDeleteAnEntry;
+import com.platform.locators.resources.dictionary.LocatorsInDictionaryDeleteDictionay;
+import com.platform.locators.resources.dictionary.LocatorsInDictionaryExportADictionary;
+import com.platform.locators.resources.dictionary.LocatorsInDictionaryListDictionaries;
+import com.platform.locators.resources.dictionary.LocatorsInDictionaryListEntries;
+import com.platform.locators.resources.dictionary.LocatorsInDictionaryLookUp;
+import com.platform.locators.resources.dictionary.LocatorsInDictionaryLookUpSupportedLanguage;
+import com.platform.locators.resources.dictionary.LocatorsInDictionarySupportedLanguages;
+import com.platform.locators.resources.dictionary.LocatorsInDictionaryUpdateADictionary;
+import com.platform.locators.resources.dictionary.LocatorsInDictionaryUpdateAnEntry;
+import com.platform.locators.resources.dictionary.LocatorsInResourcesAPI;
 
 /**
  * All resources for the dictionary item are defined here.
@@ -261,9 +262,9 @@ public class ResourcesDictionary {
 		lookUpText=deleteAnEntry.getDeleteAnEntryResponseBody.getText().toString();
 		String lookUpItem=deleteAnEntry.getDeleteAnEntryResponseCode.getText();
 		return (lookUpText.contains(ResourcesAssertPage.getDeleteanentryassert()) && lookUpItem.contains(ResourcesAssertPage.getDictionaryresponsecode()));
-		
+
 	}
-	
+
 	/**
 	 * This will update an entry in a dictionary
 	 * @return
@@ -299,11 +300,11 @@ public class ResourcesDictionary {
 		lookUpText=updateAnEntry.getUpdateAnEntryResponseBody.getText().toString();
 		String lookUpInt=updateAnEntry.getUpdateAnEntryResponseCode.getText();
 		return (lookUpText.contains(ResourcesAssertPage.getConfidenceassert()) && lookUpInt.contains(ResourcesAssertPage.getDictionaryresponsecode()));
-		
-		
-		
+
+
+
 	}
-	
+
 	/**
 	 * This method will create dictionary, add item and then export
 	 * @return
@@ -332,10 +333,42 @@ public class ResourcesDictionary {
 		lookUpText=exportadictionary.getExportADictionaryResponseBody.getText().toString();
 		String lookUpInt=exportadictionary.getExportADictionaryResponseCode.getText();
 		return (lookUpText.contains("ENCODING") && lookUpInt.contains(ResourcesAssertPage.getDictionaryresponsecode()));
-	
+
+	}
+	/**
+	 * This method will add dictionary, add a item and list it.
+	 * @return
+	 * @throws InterruptedException
+	 * @throws ParseException
+	 */
+	public Boolean dictionaryListEntries() throws InterruptedException, ParseException{
+		commonInDictionay();	
+		LocatorsInDictionaryAddDictionary adddictionary=PageFactory.initElements(driver, LocatorsInDictionaryAddDictionary.class);
+		adddictionary.selectAddDictionary.click();
+		adddictionary.inputAddDictionaryinput.sendKeys(ResourcesAssertPage.getCreatedictionary());
+		adddictionary.clickAddDictionaryTryButton.click();
+		Thread.sleep(2000);
+		String lookUpText=adddictionary.getAddDictionaryResponseBody.getText().toString();
+		String dictionaryId=JsonParser.dictionaryJsontToTextConverter(lookUpText);
+		LocatorsInDictionaryAddAnEntry addanentry=PageFactory.initElements(driver, LocatorsInDictionaryAddAnEntry.class);
+		addanentry.selectAddAnEntry.click();
+		addanentry.inputAddAnEntryDictionaryId.sendKeys(dictionaryId);
+		addanentry.inputAddAnEntryInput.sendKeys(ResourcesAssertPage.getAddanentryinput());
+		addanentry.clickAddAnEntryTryButton.click();
+		Thread.sleep(2000);
+		LocatorsInDictionaryListEntries listentries=PageFactory.initElements(driver, LocatorsInDictionaryListEntries.class);
+		listentries.selectListEntries.click();
+		listentries.inputListEntriesDictionaryId.sendKeys(dictionaryId);
+		listentries.clickListEntriesTryButton.click();
+		Thread.sleep(2000);
+		lookUpText=listentries.getListEntriesResponseBody.getText().toString();
+		String lookUpInt=listentries.getListEntriesResponseCode.getText();
+		return (lookUpText.contains("entries") && lookUpInt.contains(ResourcesAssertPage.getDictionaryresponsecode()));
 		
 		
-		
+
+
+
 	}
 
 

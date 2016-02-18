@@ -168,6 +168,32 @@ public class JsonParser {
 		}
 		return value;
 	}
+	
+	
+	public static String[] jsontToTextConverterarray123(String jsonFile) throws IOException, ParseException{
+
+		String[] typo1 = new String[5];
+		String typo="";
+		int i=0;
+		JSONParser jsonParser = new JSONParser();
+		JSONObject jsonObject = (JSONObject) jsonParser.parse(jsonFile);
+		JSONObject characters1 = (JSONObject) jsonObject.get("annotations");
+		JSONArray characters = (JSONArray) characters1.get("annotations");
+		Iterator<JSONObject> iterator = characters.iterator();
+		while (iterator.hasNext()) {
+			JSONObject factObj = (JSONObject) iterator.next();
+			//typo= (String []) factObj.get("type");
+			typo= (String) factObj.get("type");
+			typo1[i]=typo;
+			i++;
+			System.out.println(typo);
+			//String value = (String) factObj.get("value");
+
+		}
+
+		return typo1;
+
+	}
 
 
 }

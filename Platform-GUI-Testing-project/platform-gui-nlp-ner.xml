@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="nlpNer" verbose="1">
+
+	<test name="nlpNer1">
+		<classes>
+
+			<class name="com.platform.gui.nlp.ner.test.TestNLPNerSupportedLanguage"></class>
+
+		</classes>
+
+	</test>
+
+
+	<test name="nlpNer2">
+		<classes>
+			<class name="com.platform.gui.nlp.ner.test.TestNerAnnotationWithInput"></class>
+
+		</classes>
+
+	</test>
+	<test name="nlpNer3">
+		<classes>
+			<class name="com.platform.gui.nlp.ner.test.TestNerAnnotationWithInputFile"></class>
+
+		</classes>
+
+	</test>
+	<test name="nlpNer4">
+		<classes>
+			<class name="com.platform.gui.nlp.ner.test.TestNerExtractEntityWithInput"></class>
+
+		</classes>
+
+	</test>
+	<test name="nlpNer5">
+		<classes>
+			<class
+				name="com.platform.gui.nlp.ner.test.TestNerExtractEntityWithInputFile"></class>
+
+		</classes>
+	</test>
+
+
+
+
+
+</suite> <!-- Suite -->

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="resourcesDictionary" verbose="1">
+  	
+	 <test name="resourcesDictionary1">
+		<classes>
+ 			<class name="com.platform.gui.resources.dictionary.test.TestResourcesDictionaryUpdateADictionary"></class>
+ 			
+		</classes>
+		
+	</test>
+	 <test name="resourcesDictionary2">
+		<classes>
+ 			<class name="com.platform.gui.resources.dictionary.test.TestResourcesDictionaryLookUp"></class>
+ 			
+		</classes>
+		
+	</test>
+	 <test name="resourcesDictionary3">
+		<classes>
+ 			<class name="com.platform.gui.resources.dictionary.test.TestResourcesDictionaryLookUpSuppLanguage"></class>
+ 			
+		</classes>
+		
+	</test>
+	 <test name="resourcesDictionary4">
+		<classes>
+ 			<class name="com.platform.gui.resources.dictionary.test.TestResourcesDictionaryAddDictionary"></class>
+ 			
+		</classes>
+		
+	</test>
+	<test name="resourcesDictionary5">
+		<classes>
+ 			<class name="com.platform.gui.resources.dictionary.test.TestResourcesDictionaryDeleteADictionary"></class>
+ 			
+		</classes>
+		
+	</test>
+	<test name="resourcesDictionary6">
+		<classes>
+ 			<class name="com.platform.gui.resources.dictionary.test.TestResourcesDictionaryUpdateADictionary"></class>
+ 			
+		</classes>
+		
+	</test>
+	
+	<test name="resourcesDictionary7">
+		<classes>
+ 			<class name="com.platform.gui.resources.dictionary.test.TestResourcesDictionaryListDictionaries"></class>
+ 			
+		</classes>
+		
+	</test>
+	<test name="resourcesDictionary8">
+		<classes>
+ 			<class name="com.platform.gui.resources.dictionary.test.TestResourcesDictionaryListDictionariesAscendingOrder"></class>
+ 			
+		</classes>
+		
+	</test>
+		<test name="resourcesDictionary9">
+		<classes>
+ 			<class name="com.platform.gui.resources.dictionary.test.TestResourcesDictionaryListDictionariesDescendingOrder"></class>
+ 			
+		</classes>
+		
+	</test>
+	
+	<test name="resourcesDictionary10">
+		<classes>
+ 			<class name="com.platform.gui.resources.dictionary.test.TestResourcesDictionaryAddAnEntry"></class>
+ 			
+		</classes>
+		
+	</test>
+	<test name="resourcesDictionary11">
+		<classes>
+ 			<class name="com.platform.gui.resources.dictionary.test.TestResourcesDictionaryDeleteAnEntry"></class>
+ 			
+		</classes>
+		
+	</test>
+	
+	<test name="resourcesDictionary12">
+		<classes>
+ 			<class name="com.platform.gui.resources.dictionary.test.TestResourcesDictionaryUpdateAnEntry"></class>
+ 			
+		</classes>
+		
+	</test>
+	
+		<test name="resourcesDictionary13">
+		<classes>
+ 			<class name="com.platform.gui.resources.dictionary.test.TestResourcesDictionaryExportADictionary"></class>
+ 			
+		</classes>
+		
+	</test>
+	
+		<test name="resourcesDictionary14">
+		<classes>
+ 			<class name="com.platform.gui.resources.dictionary.test.TestResourcesDictionaryListEntries"></class>
+ 			
+		</classes>
+		
+	</test>
+			
+</suite> <!-- Suite -->

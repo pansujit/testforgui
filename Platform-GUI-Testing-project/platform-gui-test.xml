@@ -243,16 +243,37 @@
 		
 	</test>
 	
-	
-	
-	
+		<test name="testme32">
+		<classes>
+ 			<class name="com.platform.gui.resources.test.TestResourcesDictionaryListEntries"></class>
+ 			
+		</classes>
 		
+	</test>
+	
+		<test name="testme33">
+		<classes>
+ 			<class name="com.platform.gui.resources.corpus.test.TestResourcesCorpusAddANewCorpus"></class>
+ 			
+		</classes>
 		
+	</test>
+	
+	<test name="testme34">
+		<classes>
+ 			<class name="com.platform.gui.resources.corpus.test.TestResourcesCorpusCorpusExists"></class>
+ 			
+		</classes>
 		
+	</test>
 	
-	
-	
-	
+	<test name="testme35">
+		<classes>
+ 			<class name="com.platform.gui.resources.corpus.test.TestResourcesCorpusDeleteCorpus"></class>
+ 			
+		</classes>
+		
+	</test>
 	
 	
 </suite> <!-- Suite -->

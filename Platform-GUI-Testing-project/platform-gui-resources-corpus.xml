@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="resourceCorpus" verbose="1">
+ 	
+		<test name="resourceCorpus1">
+		<classes>
+ 			<class name="com.platform.gui.resources.corpus.test.TestResourcesCorpusAddANewCorpus"></class>
+ 			
+		</classes>
+		
+	</test>
+	
+	<test name="resourceCorpus2">
+		<classes>
+ 			<class name="com.platform.gui.resources.corpus.test.TestResourcesCorpusCorpusExists"></class>
+ 			
+		</classes>
+		
+	</test>
+	
+	<test name="resourceCorpus3">
+		<classes>
+ 			<class name="com.platform.gui.resources.corpus.test.TestResourcesCorpusDeleteCorpus"></class>
+ 			
+		</classes>
+		
+	</test>
+	
+	
+</suite> <!-- Suite -->

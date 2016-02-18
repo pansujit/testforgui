@@ -7,8 +7,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
-import com.platform.path.locator.CommonLocators;
-import com.platform.path.locator.LocatorsInReferenceDropDown;
+import com.platform.gui.test.baseclass.CommonLocators;
+import com.platform.gui.test.baseclass.LocatorsInReferenceDropDown;
 
 /**
  * @author sujit

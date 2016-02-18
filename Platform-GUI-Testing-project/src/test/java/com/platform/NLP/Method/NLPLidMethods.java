@@ -9,8 +9,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
 import com.platform.asserting.attribute.NLPAssertPage;
+import com.platform.locators.nlp.lid.LocatorsInNLPLidAPI;
 import com.platform.method.commonInReference.CommonInReference;
-import com.platform.path.locator.LocatorsInNLPLidAPI;
 
 /**
  * @author pandey

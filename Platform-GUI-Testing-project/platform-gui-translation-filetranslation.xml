@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="fileTranslation" verbose="1">
+
+	<test name="fileTranslation1">
+		<classes>
+			<class
+				name="com.platform.gui.translation.filetranlation.test.TestTranslationFileTranslationTextENtoFR"></class>
+
+		</classes>
+
+	</test>
+
+
+	<test name="fileTranslation2">
+		<classes>
+
+			<class
+				name="com.platform.gui.translation.filetranlation.test.TestTranslationFileTranslationTextENtoFRAsync"></class>
+		</classes>
+
+	</test>
+
+	<test name="fileTranslation3">
+		<classes>
+			<class
+				name="com.platform.gui.translation.filetranlation.test.TestTranslationFileTranslationTextENtoFRAsyncResult"></class>
+
+		</classes>
+
+	</test>
+	<test name="fileTranslation4">
+		<classes>
+			<class
+				name="com.platform.gui.translation.filetranlation.test.TestTranslationFileTranslationTextENtoFRAsyncStatus"></class>
+
+		</classes>
+
+	</test>
+	<test name="fileTranslation5">
+		<classes>
+			<class
+				name="com.platform.gui.translation.filetranlation.test.TestTranslationFileTranslationBatchCreate"></class>
+
+		</classes>
+
+
+	</test>
+
+
+	<test name="fileTranslation6">
+		<classes>
+			<class
+				name="com.platform.gui.translation.filetranlation.test.TestTranslationFileTranslationTextENtoFRWithSourceTrue"></class>
+
+		</classes>
+
+	</test>
+
+
+</suite> <!-- Suite -->
