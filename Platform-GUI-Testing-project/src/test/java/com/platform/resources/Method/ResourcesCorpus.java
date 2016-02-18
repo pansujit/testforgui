@@ -8,9 +8,9 @@ import java.io.IOException;
 import org.json.simple.parser.ParseException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
-
 import com.platform.asserting.attribute.CorpusAssertPage;
 import com.platform.asserting.attribute.JsonParserCorpus;
+import com.platform.locators.resources.corpus.LocatorsInCorpusAddCorpusSegments;
 import com.platform.locators.resources.corpus.LocatorsInCorpusAddNewCorpus;
 import com.platform.locators.resources.corpus.LocatorsInCorpusCorpusExist;
 import com.platform.locators.resources.corpus.LocatorsInCorpusDeleteCorpus;
@@ -56,7 +56,7 @@ public class ResourcesCorpus {
 		addnewcorpus.inputAddANewEmptyCorpusName.sendKeys(CorpusAssertPage.getName());
 		addnewcorpus.inputAddANewEmptyCorpusLang.sendKeys(CorpusAssertPage.getSrclanguage());
 		addnewcorpus.clickAddANewEmptyCorpusTryButton.click();
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		String[] lookUpText={addnewcorpus.getAddANewEmptyCorpusResponseBody.getText().toString(),addnewcorpus.getAddANewEmptyCorpusResponseCode.getText()};
 		return lookUpText;
 		
@@ -153,19 +153,32 @@ public class ResourcesCorpus {
 		(lookUpInt.contains(CorpusAssertPage.getAssertresponsecode())));
 		
 	
+		}
+	
+	public String[] addCorpusSegments() throws InterruptedException, IOException, ParseException{
+		
+		String[] lookUpText=addnewEmptyCorpus();
+		String corpusId=JsonParserCorpus.getCorpusId(lookUpText[0]);
+		LocatorsInCorpusAddCorpusSegments addsegments=PageFactory.initElements(driver, LocatorsInCorpusAddCorpusSegments.class);
+		addsegments.selectAddCorpusSegments.click();
+		addsegments.inputAddCorpusSegmentsbody.sendKeys(String.format(CorpusAssertPage.getInputinaddcorpussegment(), corpusId));
+		addsegments.clickAddCorpusSegmentsTryButton.click();
+		Thread.sleep(2000);
+		String[] lookUp={addsegments.getAddCorpusSegmentsResponseBody.getText().toString(),addsegments.getAddCorpusSegmentsResponseCode.getText()};
+		return lookUp;
 		
 	}
 	
-	
-
+	public Boolean corpusAddCorpusSegments() throws InterruptedException, IOException, ParseException{
+		commonInDictionay();
+		String[] lookUp=addCorpusSegments();
+		return (lookUp[0].contains(CorpusAssertPage.getAssertinaddcorpussegment()) && lookUp[0].contains(CorpusAssertPage.getAssertinaddcorpussegmentcomma()) &&
+		lookUp[1].contains(CorpusAssertPage.getAssertresponsecode()));
 		
-	
-	
-	
-	
-	
-	
-	
+				
+	}
+
+			
 	
 
 }

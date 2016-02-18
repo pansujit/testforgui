@@ -20,9 +20,30 @@ public class CorpusAssertPage {
 	private static final String assertDetailCorpus="createdAt";
 	private static final String assertStatus="status";
 	private static final String assertUpdateCorpus="\"updated\": true";
+	private static final String inputInAddCorpusSegment="{\"corpusId\": \"%s\","
+			+ " \"segments\":"
+			+ " [{ \"lang\": \"en\",\"source\": \"Translation example\","
+			+ "\"targets\": ["
+			+ "{\"lang\": \"fr\",\"target\": \"Exemple de traduction\"},"
+			+ "{\"lang\": \"es\",\"target\": \"ejemplo de traducción\""
+			+ " }]}]}";
+	private static final String assertInAddCorpusSegment="segments";
+	private static final String assertInAddCorpusSegmentComma=",";
 	
 	
 
+
+	public static String getAssertinaddcorpussegmentcomma() {
+		return assertInAddCorpusSegmentComma;
+	}
+
+	public static String getAssertinaddcorpussegment() {
+		return assertInAddCorpusSegment;
+	}
+
+	public static String getInputinaddcorpussegment() {
+		return inputInAddCorpusSegment;
+	}
 
 	public static String getAssertupdatecorpus() {
 		return assertUpdateCorpus;

@@ -33,11 +33,11 @@ public class LocatorsInCorpusAddCorpusSegments {
 	
 	//response body
 	@FindBy(how=How.XPATH, using=".//*[@id='Corpus_post_resources_corpus_segment_add']/div/div[3]/div[3]/pre/code")
-	public WebElement clickAddCorpusSegmentsResponseBody;
+	public WebElement getAddCorpusSegmentsResponseBody;
 	
 	//response Code
 	@FindBy(how=How.XPATH, using=".//*[@id='Corpus_post_resources_corpus_segment_add']/div/div[3]/div[4]/pre")
-	public WebElement clickAddCorpusSegmentsResponseCode;
+	public WebElement getAddCorpusSegmentsResponseCode;
 	
 	
 	
