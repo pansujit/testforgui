@@ -19,7 +19,7 @@ public class ResourcesAssertPage {
 	private static final String lookUpRespose2="output";
 	private static final String lookUpRespose3="matches";
 	private static final String lookUpRespose4="targets";
-	private static final String LookUpResponse="LanguagePairs";
+	private static final String LookUpResponse="languagePairs";
 	private static final String createDictionary="{\"dictionary\":{ \"sourceLang\":\"en\",\"name\":\"My dict\",\"targetLangs\":\"fr\",\"comments\":\"hehheh\" , \"type\":\"UD\"  }}";
 	private static final String addDictionary="id";
 	private static final String updateDictionary="{"

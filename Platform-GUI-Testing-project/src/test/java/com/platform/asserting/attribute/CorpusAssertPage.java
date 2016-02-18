@@ -4,6 +4,8 @@
 package com.platform.asserting.attribute;
 import java.util.UUID;
 
+import org.apache.commons.lang3.RandomStringUtils;
+
 
 /**
  * @author pandey
@@ -11,7 +13,7 @@ import java.util.UUID;
  */
 public class CorpusAssertPage {
 	
-	private static final String name=(UUID.randomUUID().toString()).substring(0, 10);
+	private static final String name=UUID.randomUUID().toString().replace("-","").substring(10,20);
 	private static final String assertResponseCode="200";
 	private static final String SrcLanguage="en";
 	private static final String TargetLanguage="fr";
@@ -80,7 +82,7 @@ public class CorpusAssertPage {
 
 
 	public static String getName() {
-		return name;
+		return String.format(name+"%s", RandomStringUtils.random(10, true, false));
 	}
 
 }

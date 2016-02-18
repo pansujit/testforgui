@@ -53,11 +53,12 @@ public class ResourcesCorpus {
 		
 		LocatorsInCorpusAddNewCorpus addnewcorpus=PageFactory.initElements(driver, LocatorsInCorpusAddNewCorpus.class);
 		addnewcorpus.selectAddANewEmptyCorpus.click();
-		addnewcorpus.inputAddANewEmptyCorpusName.sendKeys(CorpusAssertPage.getName());
+		String nameOfCorpus=CorpusAssertPage.getName();
+		addnewcorpus.inputAddANewEmptyCorpusName.sendKeys(nameOfCorpus);
 		addnewcorpus.inputAddANewEmptyCorpusLang.sendKeys(CorpusAssertPage.getSrclanguage());
 		addnewcorpus.clickAddANewEmptyCorpusTryButton.click();
 		Thread.sleep(2000);
-		String[] lookUpText={addnewcorpus.getAddANewEmptyCorpusResponseBody.getText().toString(),addnewcorpus.getAddANewEmptyCorpusResponseCode.getText()};
+		String[] lookUpText={addnewcorpus.getAddANewEmptyCorpusResponseBody.getText().toString(),addnewcorpus.getAddANewEmptyCorpusResponseCode.getText(),nameOfCorpus};
 		return lookUpText;
 		
 		
@@ -102,10 +103,10 @@ public class ResourcesCorpus {
 	 */
 	public Boolean corpusCorpusExists() throws InterruptedException, IOException, ParseException{
 		commonInDictionay();
-		addnewEmptyCorpus();
+		String[] lookUpText=addnewEmptyCorpus();
 		LocatorsInCorpusCorpusExist corpusexist=PageFactory.initElements(driver, LocatorsInCorpusCorpusExist.class);
 		corpusexist.selectCorpusExist.click();
-		corpusexist.inputCorpusExistName.sendKeys((CorpusAssertPage.getName()));
+		corpusexist.inputCorpusExistName.sendKeys(lookUpText[2]);
 		corpusexist.clickCorpusExistTryButton.click();
 		Thread.sleep(1000);
 		return ((corpusexist.getCorpusExistResponseBody.getText().toString()).contains(CorpusAssertPage.getAssertcorpusexist())

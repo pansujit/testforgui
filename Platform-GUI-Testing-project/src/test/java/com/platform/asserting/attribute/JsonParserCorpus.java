@@ -47,10 +47,21 @@ public class JsonParserCorpus {
 		
 		return typo;
 
+	}
+	
+	/**
+	 * This will return the segment id 
+	 * @param jsonFile
+	 * @throws IOException
+	 * @throws ParseException
+	 */
+	public static String getsegmentId(String jsonFile) throws IOException, ParseException{
 
+		JSONParser jsonParser = new JSONParser();
+		JSONObject jsonObject = (JSONObject) jsonParser.parse(jsonFile);
+		JSONArray characters = (JSONArray) jsonObject.get("segments");
+		return characters.get(0).toString();
 
-
-		
 	}
 
 
