@@ -19,10 +19,14 @@ public class CorpusAssertPage {
 	private static final String assertCorpusExist="true";
 	private static final String assertDetailCorpus="createdAt";
 	private static final String assertStatus="status";
-
+	private static final String assertUpdateCorpus="\"updated\": true";
 	
 	
 
+
+	public static String getAssertupdatecorpus() {
+		return assertUpdateCorpus;
+	}
 
 	public static String getAssertdetailcorpus() {
 		return assertDetailCorpus;

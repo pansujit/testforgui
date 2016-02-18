@@ -32,6 +32,13 @@
 		</classes>
 		
 	</test>
+	<test name="resourceCorpus4">
+		<classes>
+ 			<class name="com.platform.gui.resources.corpus.test.TestResourcesCorpusUpdateCorpusProperties"></class>
+ 			
+		</classes>
+		
+	</test>
 	
 	
 	

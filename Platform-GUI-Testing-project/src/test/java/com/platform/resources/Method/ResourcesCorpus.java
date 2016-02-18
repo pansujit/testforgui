@@ -15,6 +15,7 @@ import com.platform.locators.resources.corpus.LocatorsInCorpusAddNewCorpus;
 import com.platform.locators.resources.corpus.LocatorsInCorpusCorpusExist;
 import com.platform.locators.resources.corpus.LocatorsInCorpusDeleteCorpus;
 import com.platform.locators.resources.corpus.LocatorsInCorpusDetailCorpus;
+import com.platform.locators.resources.corpus.LocatorsInCorpusUpdateCorpusProperties;
 import com.platform.locators.resources.dictionary.LocatorsInResourcesAPI;
 
 /**
@@ -112,6 +113,13 @@ public class ResourcesCorpus {
 					
 	}
 	
+	/**
+	 * This will add corpus and assert details of that corpus
+	 * @return
+	 * @throws InterruptedException
+	 * @throws IOException
+	 * @throws ParseException
+	 */
 	public Boolean corpusDetailCorpus() throws InterruptedException, IOException, ParseException{
 		commonInDictionay();
 		String[] lookUpText=addnewEmptyCorpus();
@@ -127,9 +135,28 @@ public class ResourcesCorpus {
 		(lookUp.contains(CorpusAssertPage.getAssertstatus())) &&
 		(lookUpInt.contains(CorpusAssertPage.getAssertresponsecode())));
 		
+	}
+	
+	public Boolean corpusUpdateCorpusProperties() throws InterruptedException, IOException, ParseException{
+		commonInDictionay();
+		String[] lookUpText=addnewEmptyCorpus();
+		String corpusId=JsonParserCorpus.getCorpusId(lookUpText[0]);
+		LocatorsInCorpusUpdateCorpusProperties properties=PageFactory.initElements(driver, LocatorsInCorpusUpdateCorpusProperties.class);
+		properties.selectUpdateCorpusProperties.click();
+		properties.inputUpdateCorpusPropertiesCorpusId.sendKeys(corpusId);
+		properties.inputUpdateCorpusPropertiesName.sendKeys((CorpusAssertPage.getName()));
+		properties.clickUpdateCorpusPropertiesTryButton.click();
+		Thread.sleep(1000);
+		String lookUp=properties.getUpdateCorpusPropertiesResponseBody.getText().toString();
+		String lookUpInt=properties.getUpdateCorpusPropertiesResponseCode.getText();
+		return ((lookUp.contains(CorpusAssertPage.getAssertupdatecorpus())) &&
+		(lookUpInt.contains(CorpusAssertPage.getAssertresponsecode())));
 		
+	
 		
 	}
+	
+	
 
 		
 	
