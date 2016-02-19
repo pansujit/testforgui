@@ -59,7 +59,7 @@
 
 		</classes>
 	</test>
-		<test name="resourceCorpus8">
+	<test name="resourceCorpus8">
 		<classes>
 			<class
 				name="com.platform.gui.resources.corpus.test.TestResourcesCorpusListCorpusSegments"></class>
@@ -80,9 +80,45 @@
 
 		</classes>
 	</test>
+	<test name="resourceCorpus11">
+		<classes>
+			<class
+				name="com.platform.gui.resources.corpus.test.TestResourcesCorpusUpdateCorpusSegment"></class>
+
+		</classes>
+	</test>
+	<test name="resourceCorpus12">
+		<classes>
+			<class
+				name="com.platform.gui.resources.corpus.test.TestResourcesCorpusDeleteCorpusSegmentTargets"></class>
+
+		</classes>
+	</test>
+
+	<test name="resourceCorpus13">
+		<classes>
+			<class
+				name="com.platform.gui.resources.corpus.test.TestResourcesCorpusExportCorpus"></class>
+
+		</classes>
+	</test>
+
+	<test name="resourceCorpus14">
+		<classes>
+			<class
+				name="com.platform.gui.resources.corpus.test.TestResourcesCorpusExportCorpusWithFormatBitext"></class>
+
+		</classes>
+	</test>
 	
-	
-	
+	<test name="resourceCorpus15">
+		<classes>
+			<class
+				name="com.platform.gui.resources.corpus.test.TestResourcesCorpusAddCorpusSegmentTargets"></class>
+
+		</classes>
+	</test>
+
 
 
 </suite> <!-- Suite -->

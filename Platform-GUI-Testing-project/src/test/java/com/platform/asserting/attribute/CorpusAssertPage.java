@@ -35,9 +35,54 @@ public class CorpusAssertPage {
 	private static final String assertListCorpora="files";
 	private static final String assertImportCorpusFirst="corpus";
 	private static final String assertImportCorpusSecond="id";
+	private static final String listSegmentResponseBody="{\"segments\": ["
+			+ "{\"lang\": \"en\",      "
+			+ "\"source\": \"Translation example\",  "
+			+ "\"id\": \"56c60a4f617bd7d84348b980.56c60a53617bd7d84348b982\","
+			+ "\"targets\": [ { \"id\": \"56c60a53617bd7d84348b983\",   "
+			+ "\"lang\": \"fr\", \"target\": \"Exemple de traduction\" },"
+			+ " {\"id\": \"56c60a53617bd7d84348b984\", \"lang\": \"es\","
+			+ " \"target\": \"ejemplo de traducción\"  "
+			+ "}]}]}";
 	
-	
+	private static final String listSegmentSourceText="There is a cat.";
+	private static final String assertInDeleteCorpusSegmentTargets="\"deleted\": true";
+	private static final String assertInExportCorpusDefault="tmx";
+	private static final String assertInExportCorpusBitext="#TM";
+	private static final String inputInAddCorpusSegmentTarget="{  \"corpusId\": \"%s\", "
+			+ " \"segId\": \"%s\", "
+			+ " \"targets\": [{      \"lang\": \"%s\",     "
+			+ " \"target\": \"added segment one\"},{\"lang\": \"%s\","
+			+ "\"target\": \"added segment two\""
+			+ "}]}";
+	private static final String assertInAddCorpusSegmentTarget="\"added\": true";
+	public static String getAssertinaddcorpussegmenttarget() {
+		return assertInAddCorpusSegmentTarget;
+	}
 
+	public static String getInputinaddcorpussegmenttarget() {
+		return inputInAddCorpusSegmentTarget;
+	}
+
+	public static String getAssertinexportcorpusdefault() {
+		return assertInExportCorpusDefault;
+	}
+
+	public static String getAssertinexportcorpusbitext() {
+		return assertInExportCorpusBitext;
+	}
+
+	public static String getAssertindeletecorpussegmenttargets() {
+		return assertInDeleteCorpusSegmentTargets;
+	}
+
+	public static String getListsegmentresponsebody() {
+		return listSegmentResponseBody;
+	}
+
+	public static String getListsegmentsourcetext() {
+		return listSegmentSourceText;
+	}
 
 	public static String getAssertimportcorpusfirst() {
 		return assertImportCorpusFirst;
