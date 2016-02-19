@@ -19,10 +19,6 @@ import com.platform.resources.Method.ResourcesDictionary;
  */
 public class TestResourcesDictionarySupportedLanguage extends BaseTestClassExtended {
 
-
-
-
-
 	@Test
 	public void dictionarySupportedLanguage() throws InterruptedException{
 

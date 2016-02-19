@@ -127,8 +127,7 @@ public Boolean fileTranslationfromENtoFRWithSourceTrue() throws InterruptedExcep
 		locatorsintranslationAPI.fileTryButton.click();
 		
 		Thread.sleep(2000);
-		
-		
+				
 		return (locatorsintranslationAPI.getFileResultSourceTrue.getText().contains("part-name: source"));
 		
 		
@@ -140,14 +139,8 @@ public Boolean fileTranslationfromENtoFRWithSourceTrue() throws InterruptedExcep
 	public String fileTranslationfromENtoFRAsyncStatus(String requestId) throws InterruptedException, ParseException{
 		
 		LocatorsInTranslateRestAPI locatorsintranslateapi=PageFactory.initElements(driver, LocatorsInTranslateRestAPI.class);
-		//JSONObject obj = new JSONObject(requestId);
-		//String requestid=JSONObject.getString(requestId);
-		   //Dictionary dict = new Hashtable();
-		//System.out.println(requestId.get("requestId"));
-			
 		locatorsintranslateapi.fileTranslateStatusTequestId.sendKeys(JsonParser.jsontToTextConverter(requestId));
 		locatorsintranslateapi.fileTranslateStatusTryButton.click();
-		//return (driver.findElement(By.xpath(".//*[@id='Translation_get_translation_file_status']/div/div[3]/div[3]/pre/code/span[7]")).getText());
 		Thread.sleep(2000);
 		return(driver.findElement(By.cssSelector("#Translation_get_translation_file_status > div > div.response > div.block.response_body.json > pre > code > span:nth-child(13)")).getText().toString());
 		
@@ -159,7 +152,7 @@ public String fileTranslationfromENtoFRAsyncResult(String requestId) throws Inte
 		
 		LocatorsInTranslateRestAPI locatorsintranslateapi=PageFactory.initElements(driver, LocatorsInTranslateRestAPI.class);
 		System.out.println(JsonParser.jsontToTextConverter(requestId));
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		locatorsintranslateapi.fileTranslateResultRequestId.sendKeys(JsonParser.jsontToTextConverter(requestId));
 		locatorsintranslateapi.fileTranslateResultTryButton.click();
 		Thread.sleep(2000);
@@ -170,10 +163,6 @@ public String fileTranslationfromENtoFRAsyncResult(String requestId) throws Inte
 	}
 
 public String fileTranslationBatchCreate() throws InterruptedException, ParseException{
-	
-	//getting front page sign in web element from locator front page
-	//LocatorsInFrontPage.signIn.click();
-	
 	
 	//comoninreferece.commonInReferenceMenu();
 	CommonInReference comoninreferece=PageFactory.initElements(driver, CommonInReference.class);

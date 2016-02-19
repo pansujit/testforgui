@@ -21,7 +21,7 @@ import com.platform.resources.Method.ResourcesCorpus;
 public class TestResourcesCorpusAddCorpusSegments extends BaseTestClassExtended {
 	
 	@Test
-	public void corpusAddANewCorpus() throws InterruptedException, IOException, ParseException{
+	public void corpusAddCorpusSegments() throws InterruptedException, IOException, ParseException{
 		ResourcesCorpus resourcecorpus=PageFactory.initElements(driver, ResourcesCorpus.class);
 		Assert.assertTrue(resourcecorpus.corpusAddCorpusSegments());
 		

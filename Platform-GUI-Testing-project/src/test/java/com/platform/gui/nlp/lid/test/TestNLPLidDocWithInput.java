@@ -20,7 +20,7 @@ public class TestNLPLidDocWithInput extends BaseTestClassExtended{
 	
 	
 	@Test
-	public void testNLPLidDocWithInput() throws InterruptedException{
+	public void lidDocWithInput() throws InterruptedException{
 		
 		NLPLidMethods nlplodmethods=PageFactory.initElements(driver, NLPLidMethods.class);
 		Assert.assertTrue(nlplodmethods.lidDocLangWithInput());

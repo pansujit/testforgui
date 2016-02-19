@@ -24,7 +24,7 @@ public class TestNLPNerSupportedLanguage extends BaseTestClassExtended {
 	
 	
 	@Test
-	public void testNLPSupportedLanguage() throws InterruptedException{
+	public void NerSupportedLanguage() throws InterruptedException{
 		
 		
 		RESTNLPNerTranslation NLPSupportedLanguage=PageFactory.initElements(driver,RESTNLPNerTranslation.class);
